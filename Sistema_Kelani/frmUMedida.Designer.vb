@@ -27,6 +27,9 @@ Partial Class frmUMedida
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AbreviaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -38,9 +41,6 @@ Partial Class frmUMedida
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.UnidadMedidaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.unidadMedidaTableAdapter()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AbreviaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +91,26 @@ Partial Class frmUMedida
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DataGridView1.Size = New System.Drawing.Size(456, 209)
         Me.DataGridView1.TabIndex = 0
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "id_U_Medida"
+        Me.Column1.HeaderText = "id_U_Medida"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'NombreMedidaDataGridViewTextBoxColumn
+        '
+        Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
+        '
+        'AbreviaturaDataGridViewTextBoxColumn
+        '
+        Me.AbreviaturaDataGridViewTextBoxColumn.DataPropertyName = "abreviatura"
+        Me.AbreviaturaDataGridViewTextBoxColumn.HeaderText = "Abreviatura"
+        Me.AbreviaturaDataGridViewTextBoxColumn.Name = "AbreviaturaDataGridViewTextBoxColumn"
         '
         'UnidadMedidaBindingSource
         '
@@ -188,26 +208,6 @@ Partial Class frmUMedida
         'UnidadMedidaTableAdapter
         '
         Me.UnidadMedidaTableAdapter.ClearBeforeFill = True
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "id_U_Medida"
-        Me.Column1.HeaderText = "id_U_Medida"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'NombreMedidaDataGridViewTextBoxColumn
-        '
-        Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
-        Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
-        Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
-        '
-        'AbreviaturaDataGridViewTextBoxColumn
-        '
-        Me.AbreviaturaDataGridViewTextBoxColumn.DataPropertyName = "abreviatura"
-        Me.AbreviaturaDataGridViewTextBoxColumn.HeaderText = "Abreviatura"
-        Me.AbreviaturaDataGridViewTextBoxColumn.Name = "AbreviaturaDataGridViewTextBoxColumn"
         '
         'frmUMedida
         '
