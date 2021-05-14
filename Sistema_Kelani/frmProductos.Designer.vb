@@ -32,7 +32,9 @@ Partial Class frmProductos
         Me.PresentacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CostoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_CategoriaP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreCatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_U_Medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VwProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
@@ -110,7 +112,7 @@ Partial Class frmProductos
         Me.DgvProductos.AutoGenerateColumns = False
         Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.PresentacionDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.NombreCatDataGridViewTextBoxColumn, Me.NombreMedidaDataGridViewTextBoxColumn})
+        Me.DgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.PresentacionDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.id_CategoriaP, Me.NombreCatDataGridViewTextBoxColumn, Me.id_U_Medida, Me.NombreMedidaDataGridViewTextBoxColumn})
         Me.DgvProductos.DataSource = Me.VwProductosBindingSource
         Me.DgvProductos.Location = New System.Drawing.Point(6, 63)
         Me.DgvProductos.Name = "DgvProductos"
@@ -154,12 +156,28 @@ Partial Class frmProductos
         Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
         Me.CostoDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'id_CategoriaP
+        '
+        Me.id_CategoriaP.DataPropertyName = "id_CategoriaP"
+        Me.id_CategoriaP.HeaderText = "id_CategoriaP"
+        Me.id_CategoriaP.Name = "id_CategoriaP"
+        Me.id_CategoriaP.ReadOnly = True
+        Me.id_CategoriaP.Visible = False
+        '
         'NombreCatDataGridViewTextBoxColumn
         '
         Me.NombreCatDataGridViewTextBoxColumn.DataPropertyName = "nombreCat"
         Me.NombreCatDataGridViewTextBoxColumn.HeaderText = "Categoria"
         Me.NombreCatDataGridViewTextBoxColumn.Name = "NombreCatDataGridViewTextBoxColumn"
         Me.NombreCatDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'id_U_Medida
+        '
+        Me.id_U_Medida.DataPropertyName = "id_U_Medida"
+        Me.id_U_Medida.HeaderText = "id_U_Medida"
+        Me.id_U_Medida.Name = "id_U_Medida"
+        Me.id_U_Medida.ReadOnly = True
+        Me.id_U_Medida.Visible = False
         '
         'NombreMedidaDataGridViewTextBoxColumn
         '
@@ -448,12 +466,14 @@ Partial Class frmProductos
     Friend WithEvents ProductoBindingSource1 As BindingSource
     Friend WithEvents VwProductosBindingSource As BindingSource
     Friend WithEvents VwProductosTableAdapter As KelaniDataSetTableAdapters.vwProductosTableAdapter
+    Friend WithEvents txtIdProd As TextBox
     Friend WithEvents IdProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PresentacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CostoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents id_CategoriaP As DataGridViewTextBoxColumn
     Friend WithEvents NombreCatDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents id_U_Medida As DataGridViewTextBoxColumn
     Friend WithEvents NombreMedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents txtIdProd As TextBox
 End Class

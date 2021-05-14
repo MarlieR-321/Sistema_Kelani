@@ -26,9 +26,9 @@
         Me.txtPresentacion.Text = DgvProductos.CurrentRow.Cells.Item(2).Value.ToString()
         Me.txtPrecio.Text = DgvProductos.CurrentRow.Cells.Item(3).Value.ToString()
         Me.txtCosto.Text = DgvProductos.CurrentRow.Cells.Item(4).Value.ToString()
-        Me.cbxCategoria.DisplayMember = DgvProductos.CurrentRow.Cells.Item(5).Value.ToString()
-        Me.cbxUMedida.DisplayMember = DgvProductos.CurrentRow.Cells.Item(6).Value.ToString()
-        'Problemas en los combobox
+        Me.cbxCategoria.SelectedValue = DgvProductos.CurrentRow.Cells.Item(5).Value.ToString()
+        Me.cbxUMedida.SelectedValue = DgvProductos.CurrentRow.Cells.Item(7).Value.ToString()
+
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
@@ -51,11 +51,30 @@
 
                 MessageBox.Show("Todos los campos son necesarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                Me.ProductoTableAdapter.UpdateQuery(txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Convert.ToInt32(Me.cbxCategoria.SelectedItem),
-                                                    Convert.ToInt32(Me.cbxUMedida.SelectedItem), Me.txtIdProd.Text)
-                'Problemas en los combobox
+                Me.ProductoTableAdapter.UpdateQuery(txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Me.cbxCategoria.SelectedValue,
+                                                    Me.cbxUMedida.SelectedValue, Me.txtIdProd.Text)
+
                 Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
                 limpiar()
+            End If
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (Me.txtIdProd.Text.Equals("")) Then
+            MessageBox.Show("Debe seleccionar un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim answer As Int32
+
+            answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If (answer = vbYes) Then
+
+                Me.ProductoTableAdapter.DeleteQuery(Me.txtIdProd.Text)
+                Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
+                limpiar()
+                MessageBox.Show("Ha eliminado el usuario correctamente", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
             End If
         End If
     End Sub

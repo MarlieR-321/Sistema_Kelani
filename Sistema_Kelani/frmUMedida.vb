@@ -43,10 +43,17 @@
         If (Me.txtIdMedida.Text.Equals("")) Then
             MessageBox.Show("Tiene que seleccionar una medida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Me.UnidadMedidaTableAdapter.DeleteQuery(Me.txtIdMedida.Text)
-            Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
-            Me.limpiar()
-            MessageBox.Show("La Unidad de Medida se ha eliminado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim answer As Int32
+
+            answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If (answer = vbYes) Then
+
+                Me.UnidadMedidaTableAdapter.DeleteQuery(Me.txtIdMedida.Text)
+                Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
+                Me.limpiar()
+                MessageBox.Show("La Unidad de Medida se ha eliminado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
         End If
     End Sub
 End Class

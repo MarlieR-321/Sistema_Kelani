@@ -39,10 +39,16 @@
 
         Else
 
-            Me.CategoriaTableAdapter.DeleteQuery(Me.txtIdCat.Text)
-            Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
-            Me.limpiarCampos()
-            MessageBox.Show("Se elimino la categoria correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim answer As Int32
+
+            answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If (answer = vbYes) Then
+
+                Me.CategoriaTableAdapter.DeleteQuery(Me.txtIdCat.Text)
+                Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
+                Me.limpiarCampos()
+                MessageBox.Show("Se elimino la categoria correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 

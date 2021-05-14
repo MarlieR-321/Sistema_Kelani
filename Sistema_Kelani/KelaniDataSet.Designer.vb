@@ -6055,7 +6055,11 @@ Partial Public Class KelaniDataSet
         
         Private columncosto As Global.System.Data.DataColumn
         
+        Private columnid_CategoriaP As Global.System.Data.DataColumn
+        
         Private columnnombreCat As Global.System.Data.DataColumn
+        
+        Private columnid_U_Medida As Global.System.Data.DataColumn
         
         Private columnnombreMedida As Global.System.Data.DataColumn
         
@@ -6136,9 +6140,25 @@ Partial Public Class KelaniDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property id_CategoriaPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_CategoriaP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property nombreCatColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnnombreCat
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property id_U_MedidaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_U_Medida
             End Get
         End Property
         
@@ -6187,9 +6207,9 @@ Partial Public Class KelaniDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddvwProductosRow(ByVal id_Producto As Integer, ByVal nombre As String, ByVal presentacion As String, ByVal precio As Double, ByVal costo As Double, ByVal nombreCat As String, ByVal nombreMedida As String) As vwProductosRow
+        Public Overloads Function AddvwProductosRow(ByVal id_Producto As Integer, ByVal nombre As String, ByVal presentacion As String, ByVal precio As Double, ByVal costo As Double, ByVal id_CategoriaP As Integer, ByVal nombreCat As String, ByVal id_U_Medida As Integer, ByVal nombreMedida As String) As vwProductosRow
             Dim rowvwProductosRow As vwProductosRow = CType(Me.NewRow,vwProductosRow)
-            Dim columnValuesArray() As Object = New Object() {id_Producto, nombre, presentacion, precio, costo, nombreCat, nombreMedida}
+            Dim columnValuesArray() As Object = New Object() {id_Producto, nombre, presentacion, precio, costo, id_CategoriaP, nombreCat, id_U_Medida, nombreMedida}
             rowvwProductosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowvwProductosRow)
             Return rowvwProductosRow
@@ -6197,8 +6217,8 @@ Partial Public Class KelaniDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByid_Producto(ByVal id_Producto As Integer) As vwProductosRow
-            Return CType(Me.Rows.Find(New Object() {id_Producto}),vwProductosRow)
+        Public Function FindByid_Productoid_CategoriaPid_U_Medida(ByVal id_Producto As Integer, ByVal id_CategoriaP As Integer, ByVal id_U_Medida As Integer) As vwProductosRow
+            Return CType(Me.Rows.Find(New Object() {id_Producto, id_CategoriaP, id_U_Medida}),vwProductosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6223,7 +6243,9 @@ Partial Public Class KelaniDataSet
             Me.columnpresentacion = MyBase.Columns("presentacion")
             Me.columnprecio = MyBase.Columns("precio")
             Me.columncosto = MyBase.Columns("costo")
+            Me.columnid_CategoriaP = MyBase.Columns("id_CategoriaP")
             Me.columnnombreCat = MyBase.Columns("nombreCat")
+            Me.columnid_U_Medida = MyBase.Columns("id_U_Medida")
             Me.columnnombreMedida = MyBase.Columns("nombreMedida")
         End Sub
         
@@ -6240,21 +6262,26 @@ Partial Public Class KelaniDataSet
             MyBase.Columns.Add(Me.columnprecio)
             Me.columncosto = New Global.System.Data.DataColumn("costo", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncosto)
+            Me.columnid_CategoriaP = New Global.System.Data.DataColumn("id_CategoriaP", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_CategoriaP)
             Me.columnnombreCat = New Global.System.Data.DataColumn("nombreCat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombreCat)
+            Me.columnid_U_Medida = New Global.System.Data.DataColumn("id_U_Medida", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_U_Medida)
             Me.columnnombreMedida = New Global.System.Data.DataColumn("nombreMedida", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombreMedida)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_Producto}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_Producto, Me.columnid_CategoriaP, Me.columnid_U_Medida}, true))
             Me.columnid_Producto.AllowDBNull = false
-            Me.columnid_Producto.Unique = true
             Me.columnnombre.AllowDBNull = false
             Me.columnnombre.MaxLength = 25
             Me.columnpresentacion.AllowDBNull = false
             Me.columnpresentacion.MaxLength = 25
             Me.columnprecio.AllowDBNull = false
             Me.columncosto.AllowDBNull = false
+            Me.columnid_CategoriaP.AllowDBNull = false
             Me.columnnombreCat.AllowDBNull = false
             Me.columnnombreCat.MaxLength = 25
+            Me.columnid_U_Medida.AllowDBNull = false
             Me.columnnombreMedida.AllowDBNull = false
             Me.columnnombreMedida.MaxLength = 15
         End Sub
@@ -7929,12 +7956,34 @@ Partial Public Class KelaniDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id_CategoriaP() As Integer
+            Get
+                Return CType(Me(Me.tablevwProductos.id_CategoriaPColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevwProductos.id_CategoriaPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property nombreCat() As String
             Get
                 Return CType(Me(Me.tablevwProductos.nombreCatColumn),String)
             End Get
             Set
                 Me(Me.tablevwProductos.nombreCatColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id_U_Medida() As Integer
+            Get
+                Return CType(Me(Me.tablevwProductos.id_U_MedidaColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevwProductos.id_U_MedidaColumn) = value
             End Set
         End Property
         
@@ -12272,7 +12321,7 @@ Namespace KelaniDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id_Producto, nombre, presentacion, precio, costo, id_CategoriaP, id_U_Medi"& _ 
@@ -12280,21 +12329,14 @@ Namespace KelaniDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO [dbo].[Producto] ([nombre], [presentacion], [precio], [costo], [id_Ca"& _ 
-                "tegoriaP], [id_U_Medida]) VALUES (@nombre, @presentacion, @precio, @costo, @id_C"& _ 
-                "ategoriaP, @id_U_Medida);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandText = "DELETE FROM [dbo].[Producto] WHERE ([id_Producto] = @Original_id_Producto)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@presentacion", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "presentacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@precio", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "precio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@costo", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "costo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_CategoriaP", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_CategoriaP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_U_Medida", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_U_Medida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Producto", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_Producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "UPDATE [dbo].[Producto] SET [nombre] = @nombre, [presentacion] = @presentacion, ["& _ 
-                "precio] = @precio, [costo] = @costo, [id_CategoriaP] = @id_CategoriaP, [id_U_Med"& _ 
-                "ida] = @id_U_Medida WHERE ([id_Producto] = @Original_id_Producto) "
+            Me._commandCollection(2).CommandText = "INSERT INTO [dbo].[Producto] ([nombre], [presentacion], [precio], [costo], [id_Ca"& _ 
+                "tegoriaP], [id_U_Medida]) VALUES (@nombre, @presentacion, @precio, @costo, @id_C"& _ 
+                "ategoriaP, @id_U_Medida);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@presentacion", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "presentacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -12302,7 +12344,19 @@ Namespace KelaniDataSetTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@costo", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "costo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_CategoriaP", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_CategoriaP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_U_Medida", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_U_Medida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Producto", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_Producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "UPDATE [dbo].[Producto] SET [nombre] = @nombre, [presentacion] = @presentacion, ["& _ 
+                "precio] = @precio, [costo] = @costo, [id_CategoriaP] = @id_CategoriaP, [id_U_Med"& _ 
+                "ida] = @id_U_Medida WHERE ([id_Producto] = @Original_id_Producto) "
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@presentacion", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "presentacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@precio", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "precio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@costo", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "costo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_CategoriaP", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_CategoriaP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_U_Medida", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_U_Medida", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_Producto", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_Producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12487,9 +12541,32 @@ Namespace KelaniDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function DeleteQuery(ByVal Original_id_Producto As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(Original_id_Producto,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertQuery(ByVal nombre As String, ByVal presentacion As String, ByVal precio As Double, ByVal costo As Double, ByVal id_CategoriaP As Integer, ByVal id_U_Medida As Integer) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nombre")
             Else
@@ -12525,7 +12602,7 @@ Namespace KelaniDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UpdateQuery(ByVal nombre As String, ByVal presentacion As String, ByVal precio As Double, ByVal costo As Double, ByVal id_CategoriaP As Integer, ByVal id_U_Medida As Integer, ByVal Original_id_Producto As Integer) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nombre")
             Else
@@ -14881,7 +14958,9 @@ Namespace KelaniDataSetTableAdapters
             tableMapping.ColumnMappings.Add("presentacion", "presentacion")
             tableMapping.ColumnMappings.Add("precio", "precio")
             tableMapping.ColumnMappings.Add("costo", "costo")
+            tableMapping.ColumnMappings.Add("id_CategoriaP", "id_CategoriaP")
             tableMapping.ColumnMappings.Add("nombreCat", "nombreCat")
+            tableMapping.ColumnMappings.Add("id_U_Medida", "id_U_Medida")
             tableMapping.ColumnMappings.Add("nombreMedida", "nombreMedida")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
@@ -14899,8 +14978,8 @@ Namespace KelaniDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id_Producto, nombre, presentacion, precio, costo, nombreCat, nombreMedida "& _ 
-                "FROM dbo.vwProductos"
+            Me._commandCollection(0).CommandText = "SELECT id_Producto, nombre, presentacion, precio, costo, id_CategoriaP, nombreCat"& _ 
+                ", id_U_Medida, nombreMedida FROM dbo.vwProductos"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
