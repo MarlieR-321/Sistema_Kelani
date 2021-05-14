@@ -126,6 +126,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KelaniDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="KelaniDataSet.vb">
+      <DependentUpon>KelaniDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MovimientoInventario.designer.vb">
       <DependentUpon>MovimientoInventario.vb</DependentUpon>
     </Compile>

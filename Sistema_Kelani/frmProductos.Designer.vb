@@ -24,53 +24,59 @@ Partial Class frmProductos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvProductos = New System.Windows.Forms.DataGridView()
+        Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PresentacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CostoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreCatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VwProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
+        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtIdProd = New System.Windows.Forms.TextBox()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnIngresar = New System.Windows.Forms.Button()
+        Me.cbxUMedida = New System.Windows.Forms.ComboBox()
+        Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.cbxCategoria = New System.Windows.Forms.ComboBox()
+        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtCosto = New System.Windows.Forms.TextBox()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.txtPresentacion = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
-        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductoTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.ProductoTableAdapter()
-        Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PresentacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CostoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdCategoriaPDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdUMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CategoriaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.CategoriaTableAdapter()
-        Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UnidadMedidaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.unidadMedidaTableAdapter()
+        Me.ProductoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VwProductosTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.vwProductosTableAdapter()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VwProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DgvProductos)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(13, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -79,13 +85,13 @@ Partial Class frmProductos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda y Seleccion"
         '
-        'TextBox1
+        'txtBuscar
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(72, 31)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(697, 24)
-        Me.TextBox1.TabIndex = 2
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(72, 31)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(697, 24)
+        Me.txtBuscar.TabIndex = 2
         '
         'Label1
         '
@@ -97,29 +103,98 @@ Partial Class frmProductos
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Buscar:"
         '
-        'DataGridView1
+        'DgvProductos
         '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.PresentacionDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.IdCategoriaPDataGridViewTextBoxColumn, Me.IdUMedidaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ProductoBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 63)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(763, 257)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvProductos.AllowUserToAddRows = False
+        Me.DgvProductos.AllowUserToDeleteRows = False
+        Me.DgvProductos.AutoGenerateColumns = False
+        Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.PresentacionDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.NombreCatDataGridViewTextBoxColumn, Me.NombreMedidaDataGridViewTextBoxColumn})
+        Me.DgvProductos.DataSource = Me.VwProductosBindingSource
+        Me.DgvProductos.Location = New System.Drawing.Point(6, 63)
+        Me.DgvProductos.Name = "DgvProductos"
+        Me.DgvProductos.ReadOnly = True
+        Me.DgvProductos.Size = New System.Drawing.Size(763, 257)
+        Me.DgvProductos.TabIndex = 0
+        '
+        'IdProductoDataGridViewTextBoxColumn
+        '
+        Me.IdProductoDataGridViewTextBoxColumn.DataPropertyName = "id_Producto"
+        Me.IdProductoDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IdProductoDataGridViewTextBoxColumn.Name = "IdProductoDataGridViewTextBoxColumn"
+        Me.IdProductoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdProductoDataGridViewTextBoxColumn.Visible = False
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PresentacionDataGridViewTextBoxColumn
+        '
+        Me.PresentacionDataGridViewTextBoxColumn.DataPropertyName = "presentacion"
+        Me.PresentacionDataGridViewTextBoxColumn.HeaderText = "Presentacion"
+        Me.PresentacionDataGridViewTextBoxColumn.Name = "PresentacionDataGridViewTextBoxColumn"
+        Me.PresentacionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CostoDataGridViewTextBoxColumn
+        '
+        Me.CostoDataGridViewTextBoxColumn.DataPropertyName = "costo"
+        Me.CostoDataGridViewTextBoxColumn.HeaderText = "Costo"
+        Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
+        Me.CostoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreCatDataGridViewTextBoxColumn
+        '
+        Me.NombreCatDataGridViewTextBoxColumn.DataPropertyName = "nombreCat"
+        Me.NombreCatDataGridViewTextBoxColumn.HeaderText = "Categoria"
+        Me.NombreCatDataGridViewTextBoxColumn.Name = "NombreCatDataGridViewTextBoxColumn"
+        Me.NombreCatDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreMedidaDataGridViewTextBoxColumn
+        '
+        Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Unidad de Medida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
+        Me.NombreMedidaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'VwProductosBindingSource
+        '
+        Me.VwProductosBindingSource.DataMember = "vwProductos"
+        Me.VwProductosBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'KelaniDataSet
+        '
+        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
+        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductoBindingSource
+        '
+        Me.ProductoBindingSource.DataMember = "Producto"
+        Me.ProductoBindingSource.DataSource = Me.KelaniDataSet
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.TextBox5)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.txtIdProd)
+        Me.GroupBox2.Controls.Add(Me.btnEliminar)
+        Me.GroupBox2.Controls.Add(Me.btnEditar)
+        Me.GroupBox2.Controls.Add(Me.btnIngresar)
+        Me.GroupBox2.Controls.Add(Me.cbxUMedida)
+        Me.GroupBox2.Controls.Add(Me.cbxCategoria)
+        Me.GroupBox2.Controls.Add(Me.txtCosto)
+        Me.GroupBox2.Controls.Add(Me.txtPrecio)
+        Me.GroupBox2.Controls.Add(Me.txtPresentacion)
+        Me.GroupBox2.Controls.Add(Me.txtNombre)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -134,91 +209,109 @@ Partial Class frmProductos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos del Producto"
         '
-        'Button3
+        'txtIdProd
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(405, 205)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(113, 29)
-        Me.Button3.TabIndex = 14
-        Me.Button3.Text = "Eliminar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.txtIdProd.Location = New System.Drawing.Point(712, 179)
+        Me.txtIdProd.Name = "txtIdProd"
+        Me.txtIdProd.Size = New System.Drawing.Size(42, 26)
+        Me.txtIdProd.TabIndex = 15
+        Me.txtIdProd.Visible = False
         '
-        'Button2
+        'btnEliminar
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(204, 205)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 29)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Editar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(405, 205)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(113, 29)
+        Me.btnEliminar.TabIndex = 14
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnEditar
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(12, 205)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 29)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Ingresar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.Location = New System.Drawing.Point(204, 205)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(113, 29)
+        Me.btnEditar.TabIndex = 13
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'btnIngresar
         '
-        Me.ComboBox2.DataSource = Me.UnidadMedidaBindingSource
-        Me.ComboBox2.DisplayMember = "nombreMedida"
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(156, 146)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(223, 26)
-        Me.ComboBox2.TabIndex = 11
-        Me.ComboBox2.ValueMember = "id_U_Medida"
+        Me.btnIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.Location = New System.Drawing.Point(12, 205)
+        Me.btnIngresar.Name = "btnIngresar"
+        Me.btnIngresar.Size = New System.Drawing.Size(113, 29)
+        Me.btnIngresar.TabIndex = 12
+        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cbxUMedida
         '
-        Me.ComboBox1.DataSource = Me.CategoriaBindingSource
-        Me.ComboBox1.DisplayMember = "nombreCat"
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(156, 93)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(223, 26)
-        Me.ComboBox1.TabIndex = 10
-        Me.ComboBox1.ValueMember = "id_CategoriaP"
+        Me.cbxUMedida.DataSource = Me.UnidadMedidaBindingSource
+        Me.cbxUMedida.DisplayMember = "nombreMedida"
+        Me.cbxUMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxUMedida.FormattingEnabled = True
+        Me.cbxUMedida.Location = New System.Drawing.Point(156, 146)
+        Me.cbxUMedida.Name = "cbxUMedida"
+        Me.cbxUMedida.Size = New System.Drawing.Size(223, 26)
+        Me.cbxUMedida.TabIndex = 11
+        Me.cbxUMedida.ValueMember = "id_U_Medida"
         '
-        'TextBox5
+        'UnidadMedidaBindingSource
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(523, 148)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox5.TabIndex = 9
+        Me.UnidadMedidaBindingSource.DataMember = "unidadMedida"
+        Me.UnidadMedidaBindingSource.DataSource = Me.KelaniDataSet
         '
-        'TextBox4
+        'cbxCategoria
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(523, 93)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox4.TabIndex = 8
+        Me.cbxCategoria.DataSource = Me.CategoriaBindingSource
+        Me.cbxCategoria.DisplayMember = "nombreCat"
+        Me.cbxCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxCategoria.FormattingEnabled = True
+        Me.cbxCategoria.Location = New System.Drawing.Point(156, 93)
+        Me.cbxCategoria.Name = "cbxCategoria"
+        Me.cbxCategoria.Size = New System.Drawing.Size(223, 26)
+        Me.cbxCategoria.TabIndex = 10
+        Me.cbxCategoria.ValueMember = "id_CategoriaP"
         '
-        'TextBox3
+        'CategoriaBindingSource
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(523, 39)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox3.TabIndex = 7
+        Me.CategoriaBindingSource.DataMember = "Categoria"
+        Me.CategoriaBindingSource.DataSource = Me.KelaniDataSet
         '
-        'TextBox2
+        'txtCosto
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(156, 39)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox2.TabIndex = 6
+        Me.txtCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCosto.Location = New System.Drawing.Point(523, 148)
+        Me.txtCosto.Name = "txtCosto"
+        Me.txtCosto.Size = New System.Drawing.Size(223, 24)
+        Me.txtCosto.TabIndex = 9
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecio.Location = New System.Drawing.Point(523, 93)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(223, 24)
+        Me.txtPrecio.TabIndex = 8
+        '
+        'txtPresentacion
+        '
+        Me.txtPresentacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPresentacion.Location = New System.Drawing.Point(523, 39)
+        Me.txtPresentacion.Name = "txtPresentacion"
+        Me.txtPresentacion.Size = New System.Drawing.Size(223, 24)
+        Me.txtPresentacion.TabIndex = 7
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(156, 39)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(223, 24)
+        Me.txtNombre.TabIndex = 6
         '
         'Label7
         '
@@ -280,82 +373,26 @@ Partial Class frmProductos
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre:"
         '
-        'KelaniDataSet
-        '
-        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
-        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProductoBindingSource
-        '
-        Me.ProductoBindingSource.DataMember = "Producto"
-        Me.ProductoBindingSource.DataSource = Me.KelaniDataSet
-        '
         'ProductoTableAdapter
         '
         Me.ProductoTableAdapter.ClearBeforeFill = True
-        '
-        'IdProductoDataGridViewTextBoxColumn
-        '
-        Me.IdProductoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.IdProductoDataGridViewTextBoxColumn.DataPropertyName = "id_Producto"
-        Me.IdProductoDataGridViewTextBoxColumn.HeaderText = "id_Producto"
-        Me.IdProductoDataGridViewTextBoxColumn.Name = "IdProductoDataGridViewTextBoxColumn"
-        Me.IdProductoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdProductoDataGridViewTextBoxColumn.Visible = False
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'PresentacionDataGridViewTextBoxColumn
-        '
-        Me.PresentacionDataGridViewTextBoxColumn.DataPropertyName = "presentacion"
-        Me.PresentacionDataGridViewTextBoxColumn.HeaderText = "Presentacion"
-        Me.PresentacionDataGridViewTextBoxColumn.Name = "PresentacionDataGridViewTextBoxColumn"
-        '
-        'PrecioDataGridViewTextBoxColumn
-        '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        '
-        'CostoDataGridViewTextBoxColumn
-        '
-        Me.CostoDataGridViewTextBoxColumn.DataPropertyName = "costo"
-        Me.CostoDataGridViewTextBoxColumn.HeaderText = "Costo"
-        Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
-        '
-        'IdCategoriaPDataGridViewTextBoxColumn
-        '
-        Me.IdCategoriaPDataGridViewTextBoxColumn.DataPropertyName = "id_CategoriaP"
-        Me.IdCategoriaPDataGridViewTextBoxColumn.HeaderText = "id_CategoriaP"
-        Me.IdCategoriaPDataGridViewTextBoxColumn.Name = "IdCategoriaPDataGridViewTextBoxColumn"
-        '
-        'IdUMedidaDataGridViewTextBoxColumn
-        '
-        Me.IdUMedidaDataGridViewTextBoxColumn.DataPropertyName = "id_U_Medida"
-        Me.IdUMedidaDataGridViewTextBoxColumn.HeaderText = "id_U_Medida"
-        Me.IdUMedidaDataGridViewTextBoxColumn.Name = "IdUMedidaDataGridViewTextBoxColumn"
-        '
-        'CategoriaBindingSource
-        '
-        Me.CategoriaBindingSource.DataMember = "Categoria"
-        Me.CategoriaBindingSource.DataSource = Me.KelaniDataSet
         '
         'CategoriaTableAdapter
         '
         Me.CategoriaTableAdapter.ClearBeforeFill = True
         '
-        'UnidadMedidaBindingSource
-        '
-        Me.UnidadMedidaBindingSource.DataMember = "unidadMedida"
-        Me.UnidadMedidaBindingSource.DataSource = Me.KelaniDataSet
-        '
         'UnidadMedidaTableAdapter
         '
         Me.UnidadMedidaTableAdapter.ClearBeforeFill = True
+        '
+        'ProductoBindingSource1
+        '
+        Me.ProductoBindingSource1.DataMember = "Producto"
+        Me.ProductoBindingSource1.DataSource = Me.KelaniDataSet
+        '
+        'VwProductosTableAdapter
+        '
+        Me.VwProductosTableAdapter.ClearBeforeFill = True
         '
         'frmProductos
         '
@@ -368,49 +405,55 @@ Partial Class frmProductos
         Me.Text = "Productos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VwProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvProductos As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnIngresar As Button
+    Friend WithEvents cbxUMedida As ComboBox
+    Friend WithEvents cbxCategoria As ComboBox
+    Friend WithEvents txtCosto As TextBox
+    Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents txtPresentacion As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnEliminar As Button
     Friend WithEvents KelaniDataSet As KelaniDataSet
     Friend WithEvents ProductoBindingSource As BindingSource
     Friend WithEvents ProductoTableAdapter As KelaniDataSetTableAdapters.ProductoTableAdapter
+    Friend WithEvents CategoriaBindingSource As BindingSource
+    Friend WithEvents CategoriaTableAdapter As KelaniDataSetTableAdapters.CategoriaTableAdapter
+    Friend WithEvents UnidadMedidaBindingSource As BindingSource
+    Friend WithEvents UnidadMedidaTableAdapter As KelaniDataSetTableAdapters.unidadMedidaTableAdapter
+    Friend WithEvents ProductoBindingSource1 As BindingSource
+    Friend WithEvents VwProductosBindingSource As BindingSource
+    Friend WithEvents VwProductosTableAdapter As KelaniDataSetTableAdapters.vwProductosTableAdapter
     Friend WithEvents IdProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PresentacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CostoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdCategoriaPDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdUMedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CategoriaBindingSource As BindingSource
-    Friend WithEvents CategoriaTableAdapter As KelaniDataSetTableAdapters.CategoriaTableAdapter
-    Friend WithEvents UnidadMedidaBindingSource As BindingSource
-    Friend WithEvents UnidadMedidaTableAdapter As KelaniDataSetTableAdapters.unidadMedidaTableAdapter
+    Friend WithEvents NombreCatDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreMedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents txtIdProd As TextBox
 End Class

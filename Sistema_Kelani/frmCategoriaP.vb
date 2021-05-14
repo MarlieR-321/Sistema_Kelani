@@ -28,7 +28,7 @@
             Me.CategoriaTableAdapter.InsertQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text)
             Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
             Me.limpiarCampos()
-            MessageBox.Show("El usuario se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("La Categoria se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
