@@ -24,25 +24,26 @@ Partial Class frmUMedida
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvUMedidas = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AbreviaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtIdMedida = New System.Windows.Forms.TextBox()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnIngresar = New System.Windows.Forms.Button()
+        Me.txtAbreviatura = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtMedida = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.UnidadMedidaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.unidadMedidaTableAdapter()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvUMedidas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -50,9 +51,9 @@ Partial Class frmUMedida
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DgvUMedidas)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(11, 14)
         Me.GroupBox1.Name = "GroupBox1"
@@ -61,13 +62,13 @@ Partial Class frmUMedida
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda y Seleccion"
         '
-        'TextBox1
+        'txtBuscar
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(93, 30)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(353, 24)
-        Me.TextBox1.TabIndex = 4
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Location = New System.Drawing.Point(93, 30)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(353, 24)
+        Me.txtBuscar.TabIndex = 4
         '
         'Label1
         '
@@ -79,18 +80,21 @@ Partial Class frmUMedida
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Buscar:"
         '
-        'DataGridView1
+        'DgvUMedidas
         '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.NombreMedidaDataGridViewTextBoxColumn, Me.AbreviaturaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.UnidadMedidaBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 60)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.DataGridView1.Size = New System.Drawing.Size(456, 209)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvUMedidas.AllowUserToAddRows = False
+        Me.DgvUMedidas.AllowUserToDeleteRows = False
+        Me.DgvUMedidas.AutoGenerateColumns = False
+        Me.DgvUMedidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvUMedidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvUMedidas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.NombreMedidaDataGridViewTextBoxColumn, Me.AbreviaturaDataGridViewTextBoxColumn})
+        Me.DgvUMedidas.DataSource = Me.UnidadMedidaBindingSource
+        Me.DgvUMedidas.Location = New System.Drawing.Point(6, 60)
+        Me.DgvUMedidas.Name = "DgvUMedidas"
+        Me.DgvUMedidas.ReadOnly = True
+        Me.DgvUMedidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.DgvUMedidas.Size = New System.Drawing.Size(456, 209)
+        Me.DgvUMedidas.TabIndex = 0
         '
         'Column1
         '
@@ -105,12 +109,14 @@ Partial Class frmUMedida
         Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
         Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
         Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
+        Me.NombreMedidaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AbreviaturaDataGridViewTextBoxColumn
         '
         Me.AbreviaturaDataGridViewTextBoxColumn.DataPropertyName = "abreviatura"
         Me.AbreviaturaDataGridViewTextBoxColumn.HeaderText = "Abreviatura"
         Me.AbreviaturaDataGridViewTextBoxColumn.Name = "AbreviaturaDataGridViewTextBoxColumn"
+        Me.AbreviaturaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'UnidadMedidaBindingSource
         '
@@ -124,12 +130,13 @@ Partial Class frmUMedida
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
+        Me.GroupBox2.Controls.Add(Me.txtIdMedida)
+        Me.GroupBox2.Controls.Add(Me.btnEliminar)
+        Me.GroupBox2.Controls.Add(Me.btnEditar)
+        Me.GroupBox2.Controls.Add(Me.btnIngresar)
+        Me.GroupBox2.Controls.Add(Me.txtAbreviatura)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.txtMedida)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(11, 297)
@@ -139,43 +146,51 @@ Partial Class frmUMedida
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
         '
-        'Button3
+        'txtIdMedida
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(374, 158)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 29)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "Eliminar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.txtIdMedida.Location = New System.Drawing.Point(412, 68)
+        Me.txtIdMedida.Name = "txtIdMedida"
+        Me.txtIdMedida.Size = New System.Drawing.Size(49, 26)
+        Me.txtIdMedida.TabIndex = 18
+        Me.txtIdMedida.Visible = False
         '
-        'Button2
+        'btnEliminar
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(201, 158)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(92, 29)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Editar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(374, 158)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(88, 29)
+        Me.btnEliminar.TabIndex = 17
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnEditar
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(12, 158)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 29)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Ingresar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.Location = New System.Drawing.Point(201, 158)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(92, 29)
+        Me.btnEditar.TabIndex = 16
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'btnIngresar
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(123, 91)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox3.TabIndex = 9
+        Me.btnIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.Location = New System.Drawing.Point(12, 158)
+        Me.btnIngresar.Name = "btnIngresar"
+        Me.btnIngresar.Size = New System.Drawing.Size(97, 29)
+        Me.btnIngresar.TabIndex = 15
+        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.UseVisualStyleBackColor = True
+        '
+        'txtAbreviatura
+        '
+        Me.txtAbreviatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAbreviatura.Location = New System.Drawing.Point(123, 91)
+        Me.txtAbreviatura.Name = "txtAbreviatura"
+        Me.txtAbreviatura.Size = New System.Drawing.Size(223, 24)
+        Me.txtAbreviatura.TabIndex = 9
         '
         'Label3
         '
@@ -187,13 +202,13 @@ Partial Class frmUMedida
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Abreviatura:"
         '
-        'TextBox2
+        'txtMedida
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(123, 36)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(223, 24)
-        Me.TextBox2.TabIndex = 7
+        Me.txtMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMedida.Location = New System.Drawing.Point(123, 36)
+        Me.txtMedida.Name = "txtMedida"
+        Me.txtMedida.Size = New System.Drawing.Size(223, 24)
+        Me.txtMedida.TabIndex = 7
         '
         'Label2
         '
@@ -220,7 +235,7 @@ Partial Class frmUMedida
         Me.Text = "Unidades de Medida"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvUMedidas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -230,16 +245,16 @@ Partial Class frmUMedida
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvUMedidas As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnIngresar As Button
+    Friend WithEvents txtAbreviatura As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtMedida As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents KelaniDataSet As KelaniDataSet
     Friend WithEvents UnidadMedidaBindingSource As BindingSource
@@ -247,4 +262,5 @@ Partial Class frmUMedida
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents NombreMedidaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AbreviaturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents txtIdMedida As TextBox
 End Class

@@ -54,7 +54,7 @@
             Me.CategoriaTableAdapter.UpdateQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text, Me.txtIdCat.Text)
             Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
             Me.limpiarCampos()
-            MessageBox.Show("El usuario se ha actualizo correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("La Categoria se ha actualizo correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 End Class
