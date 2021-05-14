@@ -14,3 +14,23 @@ C:\Users\Marlon Ramirez\documents\visual studio 2017\Projects\Sistema_Kelani\Sis
 C:\Users\Marlon Ramirez\documents\visual studio 2017\Projects\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmUMedida.resources
 C:\Users\Marlon Ramirez\documents\visual studio 2017\Projects\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactEncabezado.resources
 C:\Users\Marlon Ramirez\documents\visual studio 2017\Projects\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactDetalles.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.exe.config
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.exe
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.pdb
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.xml
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.vbprojResolveAssemblyReference.cache
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmPrincipal.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmBodega.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmCategoriaP.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactDetalles.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactEncabezado.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmInventario.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmProductos.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmUMedida.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.MovimientoInventario.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.Resources.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.TipoMovimientoInventario.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.vbproj.GenerateResource.Cache
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.exe
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.xml
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.pdb
