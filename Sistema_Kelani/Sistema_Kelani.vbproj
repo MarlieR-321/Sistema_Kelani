@@ -103,6 +103,12 @@
     <Compile Include="frmFactEncabezado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmGestionClientes.designer.vb">
+      <DependentUpon>frmGestionClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInventario.Designer.vb">
       <DependentUpon>frmInventario.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,11 @@
     <Compile Include="KelaniDataSet.vb">
       <DependentUpon>KelaniDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="KelaniDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KelaniDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MovimientoInventario.designer.vb">
       <DependentUpon>MovimientoInventario.vb</DependentUpon>
     </Compile>
@@ -139,6 +150,12 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\frmTiposClientes.designer.vb">
+      <DependentUpon>frmTiposClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\frmTiposClientes.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -173,6 +190,9 @@
     <EmbeddedResource Include="frmFactEncabezado.resx">
       <DependentUpon>frmFactEncabezado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionClientes.resx">
+      <DependentUpon>frmGestionClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInventario.resx">
       <DependentUpon>frmInventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovimientoInventario.resx">
       <DependentUpon>MovimientoInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\frmTiposClientes.resx">
+      <DependentUpon>frmTiposClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -201,8 +224,8 @@
     </None>
     <None Include="KelaniDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>KelaniDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>KelaniDataSet1.Designer.vb</LastGenOutput>
     </None>
     <None Include="KelaniDataSet.xss">
       <DependentUpon>KelaniDataSet.xsd</DependentUpon>

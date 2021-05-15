@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:bodega" ZOrder="31" X="612" Y="611" Height="134" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Categoria" ZOrder="30" X="338" Y="815" Height="191" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Cliente" ZOrder="29" X="893" Y="70" Height="229" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:Cliente" ZOrder="29" X="893" Y="70" Height="237" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:FacturaDet" ZOrder="28" X="338" Y="70" Height="191" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:FacturaEnc" ZOrder="27" X="616" Y="70" Height="267" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:inventario" ZOrder="26" X="338" Y="407" Height="210" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
@@ -32,7 +32,7 @@
           <Y>127</Y>
         </Point>
         <Point>
-          <X>1078</X>
+          <X>1109</X>
           <Y>127</Y>
         </Point>
       </RoutePoints>
