@@ -1,4 +1,6 @@
-﻿Public Class frmUMedida
+﻿Imports System.Data.SqlClient
+
+Public Class frmUMedida
     Private Sub frmUMedida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.unidadMedida' Puede moverla o quitarla según sea necesario.
         Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
@@ -15,10 +17,18 @@
         If (Me.txtMedida.Text.Equals("") Or Me.txtAbreviatura.Text.Equals("")) Then
             MessageBox.Show("Todos los datos son necesario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Me.UnidadMedidaTableAdapter.InsertQuery(Me.txtMedida.Text, Me.txtAbreviatura.Text)
-            Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
-            Me.limpiar()
-            MessageBox.Show("La medida se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Try
+                Me.UnidadMedidaTableAdapter.InsertQuery(Me.txtMedida.Text, Me.txtAbreviatura.Text)
+                Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
+                Me.limpiar()
+                MessageBox.Show("La unidad de medida se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch sqlEx As SqlException
+                MsgBox("Error al ingresar la unidad de medida", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al ingresar la unidad de medida", Ex.Message())
+                MsgBox("Error al ingresar la unidad de medida", Ex.StackTrace())
+            End Try
+
         End If
     End Sub
 
@@ -32,10 +42,18 @@
         If (Me.txtMedida.Text.Equals("") Or Me.txtAbreviatura.Text.Equals("")) Then
             MessageBox.Show("Todos los datos son necesario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Me.UnidadMedidaTableAdapter.UpdateQuery(Me.txtIdMedida.Text, Me.txtAbreviatura.Text, Me.txtIdMedida.Text)
-            Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
-            Me.limpiar()
-            MessageBox.Show("La medida se ha actualizado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Try
+                Me.UnidadMedidaTableAdapter.UpdateQuery(Me.txtIdMedida.Text, Me.txtAbreviatura.Text, Me.txtIdMedida.Text)
+                Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
+                Me.limpiar()
+                MessageBox.Show("La medida se ha actualizado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch sqlEx As SqlException
+                MsgBox("Error al actualizar la unidad de medida", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al actualizar la unidad de medida", Ex.Message())
+                MsgBox("Error al actualizar la unidad de medida", Ex.StackTrace())
+            End Try
+
         End If
     End Sub
 
@@ -45,15 +63,33 @@
         Else
             Dim answer As Int32
 
-            answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente la unidad de medida?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If (answer = vbYes) Then
+                Try
+                    Me.UnidadMedidaTableAdapter.DeleteQuery(Me.txtIdMedida.Text)
+                    Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
+                    Me.limpiar()
+                    MessageBox.Show("La Unidad de Medida se ha eliminado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch sqlEx As SqlException
+                    MsgBox("Error al eliminar la unidad de medida", sqlEx.Message())
+                Catch Ex As Exception
+                    MsgBox("Error al eliminar la unidad de medida", Ex.Message())
+                    MsgBox("Error al eliminar la unidad de medida", Ex.StackTrace())
+                End Try
 
-                Me.UnidadMedidaTableAdapter.DeleteQuery(Me.txtIdMedida.Text)
-                Me.UnidadMedidaTableAdapter.Fill(Me.KelaniDataSet.unidadMedida)
-                Me.limpiar()
-                MessageBox.Show("La Unidad de Medida se ha eliminado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
         End If
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Try
+            Me.DgvUMedidas.DataSource = Me.UnidadMedidaTableAdapter.GetDataByText(txtBuscar.Text)
+        Catch sqlEx As SqlException
+            MsgBox("Error al buscar la unidad de medida", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al buscar la unidad de medida", Ex.Message())
+            MsgBox("Error al buscar la unidad de medida", Ex.StackTrace())
+        End Try
     End Sub
 End Class

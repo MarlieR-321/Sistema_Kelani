@@ -1,4 +1,6 @@
-﻿Public Class frmCategoriaP
+﻿Imports System.Data.SqlClient
+
+Public Class frmCategoriaP
     Private Sub frmCategoriaP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.Categoria' Puede moverla o quitarla según sea necesario.
         Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
@@ -25,10 +27,18 @@
             MessageBox.Show("El nombre de la categoria es necesario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         Else
-            Me.CategoriaTableAdapter.InsertQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text)
-            Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
-            Me.limpiarCampos()
-            MessageBox.Show("La Categoria se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Try
+                Me.CategoriaTableAdapter.InsertQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text)
+                Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
+                Me.limpiarCampos()
+                MessageBox.Show("La Categoria se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch sqlEx As SqlException
+                MsgBox("Error al ingresar las categorias", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al ingresar las categorias", Ex.Message())
+                MsgBox("Error al ingresar las categorias", Ex.StackTrace())
+            End Try
+
         End If
 
     End Sub
@@ -43,11 +53,19 @@
 
             answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If (answer = vbYes) Then
+                Try
+                    Me.CategoriaTableAdapter.DeleteQuery(Me.txtIdCat.Text)
+                    Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
+                    Me.limpiarCampos()
+                    MessageBox.Show("Se elimino la categoria correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch sqlEx As SqlException
+                    MsgBox("Error al buscar las categorias", sqlEx.Message())
+                Catch Ex As Exception
+                    MsgBox("Error al eliminar las categorias", Ex.Message())
+                    MsgBox("Error al eliminar las categorias", Ex.StackTrace())
 
-                Me.CategoriaTableAdapter.DeleteQuery(Me.txtIdCat.Text)
-                Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
-                Me.limpiarCampos()
-                MessageBox.Show("Se elimino la categoria correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End Try
+
             End If
         End If
     End Sub
@@ -57,10 +75,31 @@
             MessageBox.Show("Debe seleccionar una Categoria", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         Else
-            Me.CategoriaTableAdapter.UpdateQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text, Me.txtIdCat.Text)
-            Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
-            Me.limpiarCampos()
-            MessageBox.Show("La Categoria se ha actualizo correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Try
+                Me.CategoriaTableAdapter.UpdateQuery(Me.txtCategoria.Text, Me.txtDescripcion.Text, Me.txtIdCat.Text)
+                Me.CategoriaTableAdapter.Fill(Me.KelaniDataSet.Categoria)
+                Me.limpiarCampos()
+                MessageBox.Show("La Categoria se ha actualizo correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch sqlEx As SqlException
+                MsgBox("Error al editar las categorias", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al editar las categorias", Ex.Message())
+                MsgBox("Error al editar las categorias", Ex.StackTrace())
+
+            End Try
+
         End If
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Try
+            Me.DgvCategoria.DataSource = Me.CategoriaTableAdapter.GetDataByText(txtBuscar.Text)
+        Catch sqlEx As SqlException
+            MsgBox("Error al editar las categorias", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al editar las categorias", Ex.Message())
+            MsgBox("Error al editar las categorias", Ex.StackTrace())
+
+        End Try
     End Sub
 End Class

@@ -28,10 +28,6 @@ Partial Class frmUMedida
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgvUMedidas = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AbreviaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtIdMedida = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -41,12 +37,16 @@ Partial Class frmUMedida
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtMedida = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.NombreMedidaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AbreviaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnidadMedidaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.UnidadMedidaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.unidadMedidaTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DgvUMedidas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -103,30 +103,6 @@ Partial Class frmUMedida
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Visible = False
-        '
-        'NombreMedidaDataGridViewTextBoxColumn
-        '
-        Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
-        Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
-        Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
-        Me.NombreMedidaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AbreviaturaDataGridViewTextBoxColumn
-        '
-        Me.AbreviaturaDataGridViewTextBoxColumn.DataPropertyName = "abreviatura"
-        Me.AbreviaturaDataGridViewTextBoxColumn.HeaderText = "Abreviatura"
-        Me.AbreviaturaDataGridViewTextBoxColumn.Name = "AbreviaturaDataGridViewTextBoxColumn"
-        Me.AbreviaturaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UnidadMedidaBindingSource
-        '
-        Me.UnidadMedidaBindingSource.DataMember = "unidadMedida"
-        Me.UnidadMedidaBindingSource.DataSource = Me.KelaniDataSet
-        '
-        'KelaniDataSet
-        '
-        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
-        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox2
         '
@@ -220,6 +196,30 @@ Partial Class frmUMedida
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Medida:"
         '
+        'NombreMedidaDataGridViewTextBoxColumn
+        '
+        Me.NombreMedidaDataGridViewTextBoxColumn.DataPropertyName = "nombreMedida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.HeaderText = "Medida"
+        Me.NombreMedidaDataGridViewTextBoxColumn.Name = "NombreMedidaDataGridViewTextBoxColumn"
+        Me.NombreMedidaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AbreviaturaDataGridViewTextBoxColumn
+        '
+        Me.AbreviaturaDataGridViewTextBoxColumn.DataPropertyName = "abreviatura"
+        Me.AbreviaturaDataGridViewTextBoxColumn.HeaderText = "Abreviatura"
+        Me.AbreviaturaDataGridViewTextBoxColumn.Name = "AbreviaturaDataGridViewTextBoxColumn"
+        Me.AbreviaturaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UnidadMedidaBindingSource
+        '
+        Me.UnidadMedidaBindingSource.DataMember = "unidadMedida"
+        Me.UnidadMedidaBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'KelaniDataSet
+        '
+        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
+        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'UnidadMedidaTableAdapter
         '
         Me.UnidadMedidaTableAdapter.ClearBeforeFill = True
@@ -236,10 +236,10 @@ Partial Class frmUMedida
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DgvUMedidas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.UnidadMedidaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

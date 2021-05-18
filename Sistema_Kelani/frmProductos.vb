@@ -1,4 +1,6 @@
-﻿Public Class frmProductos
+﻿Imports System.Data.SqlClient
+
+Public Class frmProductos
     Private Sub frmProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.vwProductos' Puede moverla o quitarla según sea necesario.
         Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
@@ -36,10 +38,18 @@
         If (Me.txtNombre.Text.Equals("") Or Me.txtPresentacion.Text.Equals("") Or Me.txtPrecio.Text.Equals("") Or Me.txtCosto.Text.Equals("") Or Me.cbxCategoria.SelectedValue = -1 Or Me.cbxUMedida.SelectedValue = -1) Then
             MessageBox.Show("Todos los campos son necesario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Me.ProductoTableAdapter.InsertQuery(Me.txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Convert.ToInt32(Me.cbxCategoria.SelectedValue), Convert.ToInt32(Me.cbxUMedida.SelectedValue))
-            Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
-            limpiar()
-            MessageBox.Show("El producto se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Try
+                Me.ProductoTableAdapter.InsertQuery(Me.txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Convert.ToInt32(Me.cbxCategoria.SelectedValue), Convert.ToInt32(Me.cbxUMedida.SelectedValue))
+                Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
+                limpiar()
+                MessageBox.Show("El producto se ha guardado correctamente", "Gestion Completa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch sqlEx As SqlException
+                MsgBox("Error al registrar el producto", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al registrar el producto", Ex.Message())
+                MsgBox("Error al registrar el producto", Ex.StackTrace())
+            End Try
+
         End If
     End Sub
 
@@ -51,11 +61,20 @@
 
                 MessageBox.Show("Todos los campos son necesarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                Me.ProductoTableAdapter.UpdateQuery(txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Me.cbxCategoria.SelectedValue,
+                Try
+                    Me.ProductoTableAdapter.UpdateQuery(txtNombre.Text, Me.txtPresentacion.Text, Me.txtPrecio.Text, Me.txtCosto.Text, Me.cbxCategoria.SelectedValue,
                                                     Me.cbxUMedida.SelectedValue, Me.txtIdProd.Text)
 
-                Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
-                limpiar()
+                    Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
+                    limpiar()
+
+                Catch sqlEx As SqlException
+                    MsgBox("Error al actualizar el producto", sqlEx.Message())
+                Catch Ex As Exception
+                    MsgBox("Error al actualizar el producto", Ex.Message())
+                    MsgBox("Error al actualizar el producto", Ex.StackTrace())
+                End Try
+
             End If
         End If
     End Sub
@@ -68,14 +87,34 @@
 
             answer = MessageBox.Show("Esta seguro que quiere eliminar permanentemente el producto?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-            If (answer = vbYes) Then
+            Try
+                If (answer = vbYes) Then
 
-                Me.ProductoTableAdapter.DeleteQuery(Me.txtIdProd.Text)
-                Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
-                limpiar()
-                MessageBox.Show("Ha eliminado el usuario correctamente", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                    Me.ProductoTableAdapter.DeleteQuery(Me.txtIdProd.Text)
+                    Me.VwProductosTableAdapter.Fill(Me.KelaniDataSet.vwProductos)
+                    limpiar()
+                    MessageBox.Show("Ha eliminado el usuario correctamente", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
-            End If
+                End If
+            Catch sqlEx As SqlException
+                MsgBox("Error al eliminar el producto", sqlEx.Message())
+            Catch Ex As Exception
+                MsgBox("Error al eliminar el producto", Ex.Message())
+                MsgBox("Error al eliminar el producto", Ex.StackTrace())
+            End Try
+
+
         End If
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Try
+            Me.DgvProductos.DataSource = Me.VwProductosTableAdapter.GetDataByText(txtBuscar.Text)
+        Catch sqlEx As SqlException
+            MsgBox("Error al buscar los producto", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al buscar los producto", Ex.Message())
+            MsgBox("Error al buscar los producto", Ex.StackTrace())
+        End Try
     End Sub
 End Class

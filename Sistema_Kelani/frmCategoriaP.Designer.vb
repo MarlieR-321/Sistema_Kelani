@@ -28,6 +28,10 @@ Partial Class frmCategoriaP
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgvCategoria = New System.Windows.Forms.DataGridView()
         Me.id_CategoriaP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreCatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtIdCat = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -37,16 +41,12 @@ Partial Class frmCategoriaP
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCategoria = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.NombreCatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.CategoriaTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.CategoriaTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DgvCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -102,6 +102,30 @@ Partial Class frmCategoriaP
         Me.id_CategoriaP.Name = "id_CategoriaP"
         Me.id_CategoriaP.ReadOnly = True
         Me.id_CategoriaP.Visible = False
+        '
+        'NombreCatDataGridViewTextBoxColumn
+        '
+        Me.NombreCatDataGridViewTextBoxColumn.DataPropertyName = "nombreCat"
+        Me.NombreCatDataGridViewTextBoxColumn.HeaderText = "Categoria"
+        Me.NombreCatDataGridViewTextBoxColumn.Name = "NombreCatDataGridViewTextBoxColumn"
+        Me.NombreCatDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CategoriaBindingSource
+        '
+        Me.CategoriaBindingSource.DataMember = "Categoria"
+        Me.CategoriaBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'KelaniDataSet
+        '
+        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
+        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox2
         '
@@ -195,30 +219,6 @@ Partial Class frmCategoriaP
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Nombre:"
         '
-        'NombreCatDataGridViewTextBoxColumn
-        '
-        Me.NombreCatDataGridViewTextBoxColumn.DataPropertyName = "nombreCat"
-        Me.NombreCatDataGridViewTextBoxColumn.HeaderText = "Categoria"
-        Me.NombreCatDataGridViewTextBoxColumn.Name = "NombreCatDataGridViewTextBoxColumn"
-        Me.NombreCatDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CategoriaBindingSource
-        '
-        Me.CategoriaBindingSource.DataMember = "Categoria"
-        Me.CategoriaBindingSource.DataSource = Me.KelaniDataSet
-        '
-        'KelaniDataSet
-        '
-        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
-        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'CategoriaTableAdapter
         '
         Me.CategoriaTableAdapter.ClearBeforeFill = True
@@ -236,10 +236,10 @@ Partial Class frmCategoriaP
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DgvCategoria, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
