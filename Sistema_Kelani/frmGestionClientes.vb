@@ -42,7 +42,6 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If (ComprobarCampos().Equals(1)) Then
             MessageBox.Show("Hay campos vacíos")
-
         Else
 
 

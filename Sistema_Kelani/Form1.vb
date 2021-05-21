@@ -24,4 +24,8 @@
     Private Sub InformacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformacionToolStripMenuItem.Click
         frmGestionClientes.Show()
     End Sub
+
+    Private Sub TiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposToolStripMenuItem.Click
+        frmTiposDeClientes.Show()
+    End Sub
 End Class

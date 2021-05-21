@@ -49,7 +49,8 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InventarioToolStripMenuItem, Me.CatalogosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.SeguridadToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(651, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(868, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -82,19 +83,19 @@ Partial Class frmPrincipal
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'UnidadDeMedidaToolStripMenuItem
         '
         Me.UnidadDeMedidaToolStripMenuItem.Name = "UnidadDeMedidaToolStripMenuItem"
-        Me.UnidadDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.UnidadDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UnidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida"
         '
         'ClientesToolStripMenuItem
@@ -107,13 +108,13 @@ Partial Class frmPrincipal
         'InformacionToolStripMenuItem
         '
         Me.InformacionToolStripMenuItem.Name = "InformacionToolStripMenuItem"
-        Me.InformacionToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.InformacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InformacionToolStripMenuItem.Text = "Gestion de Clientes"
         '
         'TiposToolStripMenuItem
         '
         Me.TiposToolStripMenuItem.Name = "TiposToolStripMenuItem"
-        Me.TiposToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.TiposToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TiposToolStripMenuItem.Text = "Tipos"
         '
         'SeguridadToolStripMenuItem
@@ -127,7 +128,7 @@ Partial Class frmPrincipal
         '
         Me.UsuarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IngresarUsuarioToolStripMenuItem, Me.AsignarRolesToolStripMenuItem})
         Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UsuarioToolStripMenuItem.Text = "Usuario"
         '
         'IngresarUsuarioToolStripMenuItem
@@ -146,7 +147,7 @@ Partial Class frmPrincipal
         '
         Me.RolesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarRolesToolStripMenuItem, Me.AsignarOpcionesToolStripMenuItem})
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'AdministrarRolesToolStripMenuItem
@@ -164,16 +165,17 @@ Partial Class frmPrincipal
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
-        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(651, 361)
+        Me.ClientSize = New System.Drawing.Size(868, 444)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmPrincipal"
         Me.Text = "Sistema Kelani"
         Me.MenuStrip1.ResumeLayout(False)
