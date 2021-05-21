@@ -63,13 +63,13 @@ Partial Class frmPrincipal
         'FacturacionToolStripMenuItem
         '
         Me.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem"
-        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.FacturacionToolStripMenuItem.Text = "Facturacion"
         '
         'IngresosToolStripMenuItem
         '
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
-        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.IngresosToolStripMenuItem.Text = "Ingresos"
         '
         'CatalogosToolStripMenuItem
@@ -127,7 +127,7 @@ Partial Class frmPrincipal
         '
         Me.UsuarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IngresarUsuarioToolStripMenuItem, Me.AsignarRolesToolStripMenuItem})
         Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.UsuarioToolStripMenuItem.Text = "Usuario"
         '
         'IngresarUsuarioToolStripMenuItem
@@ -146,7 +146,7 @@ Partial Class frmPrincipal
         '
         Me.RolesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarRolesToolStripMenuItem, Me.AsignarOpcionesToolStripMenuItem})
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'AdministrarRolesToolStripMenuItem
@@ -164,7 +164,7 @@ Partial Class frmPrincipal
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
-        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
         '
         'frmPrincipal

@@ -21,4 +21,7 @@
         frmFactEncabezado.Show()
     End Sub
 
+    Private Sub InformacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformacionToolStripMenuItem.Click
+        frmGestionClientes.Show()
+    End Sub
 End Class

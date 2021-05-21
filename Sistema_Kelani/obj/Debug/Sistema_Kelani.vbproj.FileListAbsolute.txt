@@ -34,3 +34,4 @@ C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.exe
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.xml
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.pdb
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmGestionClientes.resources
