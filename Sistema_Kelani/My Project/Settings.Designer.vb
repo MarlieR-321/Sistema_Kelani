@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=mdell;Initial Catalog=Kelani;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=MDELL;Initial Catalog=Kelani;Integrated Security=True")>  _
         Public ReadOnly Property KelaniConnectionString() As String
             Get
                 Return CType(Me("KelaniConnectionString"),String)

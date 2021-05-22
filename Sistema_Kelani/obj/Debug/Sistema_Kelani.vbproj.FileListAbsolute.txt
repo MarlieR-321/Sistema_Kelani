@@ -58,3 +58,5 @@ C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.xml
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.pdb
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTiposDeClientes.resources
+C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.LogIn.resources
+C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmWelcome.resources

@@ -2,9 +2,7 @@
     Private Sub frmGestionClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.T_Cliente' Puede moverla o quitarla según sea necesario.
         Me.T_ClienteTableAdapter.Fill(Me.KelaniDataSet.T_Cliente)
-        Me.ClienteTableAdapter.Fill(Me.KelaniDataSet.Cliente)
-
-
+        Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
     End Sub
     Private Sub limpiarCampos()
         txtApellido.Text = ""
@@ -54,7 +52,7 @@
                                             rtbDireccion.Text,
                                             txtEmail.Text,
                                             Convert.ToInt32(cbxTipo.SelectedValue))
-            Me.ClienteTableAdapter.Fill(Me.KelaniDataSet.Cliente)
+            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
 
         End If
     End Sub
@@ -76,7 +74,7 @@
                                             Convert.ToInt32(cbxTipo.SelectedValue),
                                             Convert.ToInt32(txtIDCLIENTE.Text))
 
-            Me.ClienteTableAdapter.Fill(Me.KelaniDataSet.Cliente)
+            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
 
         End If
 
@@ -93,9 +91,20 @@
         Else
 
             Me.ClienteTableAdapter.eliminarCliente(idEliminar)
-            Me.ClienteTableAdapter.Fill(Me.KelaniDataSet.Cliente)
+            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
 
         End If
 
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellClick
+        txtIDCLIENTE.Text = dgvClientes.CurrentRow.Cells.Item(0).Value.ToString
+        txtNombre.Text = dgvClientes.CurrentRow.Cells.Item(1).Value.ToString
+        txtApellido.Text = dgvClientes.CurrentRow.Cells.Item(2).Value.ToString
+        txttelefono.Text = dgvClientes.CurrentRow.Cells.Item(3).Value.ToString
+        txtEmail.Text = dgvClientes.CurrentRow.Cells.Item(4).Value.ToString
+        txtCedula.Text = dgvClientes.CurrentRow.Cells.Item(5).Value.ToString
+        rtbDireccion.Text = dgvClientes.CurrentRow.Cells.Item(6).Value.ToString
+        cbxTipo.SelectedItem = dgvClientes.CurrentRow.Cells.Item(7).Value.ToString
     End Sub
 End Class

@@ -23,7 +23,7 @@ Partial Class frmGestionClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.dgvClientes = New System.Windows.Forms.DataGridView()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.KelaniDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gbGestionCl = New System.Windows.Forms.GroupBox()
@@ -51,41 +51,31 @@ Partial Class frmGestionClientes
         Me.txtIDCLIENTE = New System.Windows.Forms.TextBox()
         Me.ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.ClienteTableAdapter()
         Me.T_ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.T_ClienteTableAdapter()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dgvClientes = New System.Windows.Forms.DataGridView()
+        Me.VwClientesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdTClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoClDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VwClientesTableAdapter1 = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbGestionCl.SuspendLayout()
         CType(Me.TClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VwClientesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgvClientes
+        'ClienteBindingSource
         '
-        Me.dgvClientes.AutoGenerateColumns = False
-        Me.dgvClientes.BackgroundColor = System.Drawing.SystemColors.Info
-        Me.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.IdTClienteDataGridViewTextBoxColumn})
-        Me.dgvClientes.DataSource = Me.ClienteBindingSource
-        Me.dgvClientes.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvClientes.Location = New System.Drawing.Point(12, 400)
-        Me.dgvClientes.Name = "dgvClientes"
-        Me.dgvClientes.RowHeadersWidth = 51
-        Me.dgvClientes.RowTemplate.Height = 24
-        Me.dgvClientes.Size = New System.Drawing.Size(1102, 334)
-        Me.dgvClientes.TabIndex = 0
+        Me.ClienteBindingSource.DataMember = "Cliente"
+        Me.ClienteBindingSource.DataSource = Me.KelaniDataSet
         '
         'KelaniDataSet
         '
@@ -120,59 +110,65 @@ Partial Class frmGestionClientes
         Me.gbGestionCl.Controls.Add(Me.Label1)
         Me.gbGestionCl.Controls.Add(Me.txtIDCLIENTE)
         Me.gbGestionCl.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbGestionCl.Location = New System.Drawing.Point(12, 12)
+        Me.gbGestionCl.Location = New System.Drawing.Point(9, 10)
+        Me.gbGestionCl.Margin = New System.Windows.Forms.Padding(2)
         Me.gbGestionCl.Name = "gbGestionCl"
-        Me.gbGestionCl.Size = New System.Drawing.Size(1102, 382)
+        Me.gbGestionCl.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbGestionCl.Size = New System.Drawing.Size(826, 310)
         Me.gbGestionCl.TabIndex = 1
         Me.gbGestionCl.TabStop = False
         Me.gbGestionCl.Text = "Clientes"
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(907, 264)
+        Me.btnNuevo.Location = New System.Drawing.Point(680, 214)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(172, 51)
+        Me.btnNuevo.Size = New System.Drawing.Size(129, 41)
         Me.btnNuevo.TabIndex = 20
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(907, 207)
+        Me.btnEliminar.Location = New System.Drawing.Point(680, 168)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(172, 51)
+        Me.btnEliminar.Size = New System.Drawing.Size(129, 41)
         Me.btnEliminar.TabIndex = 19
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnEditar
         '
-        Me.btnEditar.Location = New System.Drawing.Point(907, 150)
+        Me.btnEditar.Location = New System.Drawing.Point(680, 122)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(172, 51)
+        Me.btnEditar.Size = New System.Drawing.Size(129, 41)
         Me.btnEditar.TabIndex = 18
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(907, 93)
+        Me.btnGuardar.Location = New System.Drawing.Point(680, 76)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(172, 51)
+        Me.btnGuardar.Size = New System.Drawing.Size(129, 41)
         Me.btnGuardar.TabIndex = 17
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'cbxTipo
         '
-        Me.cbxTipo.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TClienteBindingSource, "idT_Cliente", True))
-        Me.cbxTipo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "idT_Cliente", True))
         Me.cbxTipo.DataSource = Me.TClienteBindingSource
         Me.cbxTipo.DisplayMember = "tipo_Cl"
+        Me.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxTipo.FormattingEnabled = True
-        Me.cbxTipo.Location = New System.Drawing.Point(217, 270)
+        Me.cbxTipo.Location = New System.Drawing.Point(163, 219)
+        Me.cbxTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxTipo.Name = "cbxTipo"
-        Me.cbxTipo.Size = New System.Drawing.Size(237, 33)
+        Me.cbxTipo.Size = New System.Drawing.Size(179, 33)
         Me.cbxTipo.TabIndex = 16
         Me.cbxTipo.ValueMember = "idT_Cliente"
         '
@@ -189,7 +185,8 @@ Partial Class frmGestionClientes
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(32, 273)
+        Me.Label8.Location = New System.Drawing.Point(24, 222)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(140, 25)
         Me.Label8.TabIndex = 15
@@ -198,7 +195,8 @@ Partial Class frmGestionClientes
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(122, 228)
+        Me.Label7.Location = New System.Drawing.Point(92, 185)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(71, 25)
         Me.Label7.TabIndex = 14
@@ -206,25 +204,26 @@ Partial Class frmGestionClientes
         '
         'txtEmail
         '
-        Me.txtEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "email", True))
-        Me.txtEmail.Location = New System.Drawing.Point(217, 225)
+        Me.txtEmail.Location = New System.Drawing.Point(163, 183)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(237, 32)
+        Me.txtEmail.Size = New System.Drawing.Size(179, 32)
         Me.txtEmail.TabIndex = 13
         '
         'rtbDireccion
         '
-        Me.rtbDireccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "direccion", True))
-        Me.rtbDireccion.Location = New System.Drawing.Point(605, 93)
+        Me.rtbDireccion.Location = New System.Drawing.Point(454, 76)
+        Me.rtbDireccion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtbDireccion.Name = "rtbDireccion"
-        Me.rtbDireccion.Size = New System.Drawing.Size(279, 260)
+        Me.rtbDireccion.Size = New System.Drawing.Size(210, 212)
         Me.rtbDireccion.TabIndex = 12
         Me.rtbDireccion.Text = ""
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(479, 93)
+        Me.Label6.Location = New System.Drawing.Point(359, 76)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 25)
         Me.Label6.TabIndex = 11
@@ -233,7 +232,8 @@ Partial Class frmGestionClientes
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(98, 318)
+        Me.Label5.Location = New System.Drawing.Point(74, 258)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(88, 25)
         Me.Label5.TabIndex = 9
@@ -241,16 +241,17 @@ Partial Class frmGestionClientes
         '
         'txttelefono
         '
-        Me.txttelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "telefono", True))
-        Me.txttelefono.Location = New System.Drawing.Point(217, 315)
+        Me.txttelefono.Location = New System.Drawing.Point(163, 256)
+        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(237, 32)
+        Me.txttelefono.Size = New System.Drawing.Size(179, 32)
         Me.txttelefono.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(117, 184)
+        Me.Label4.Location = New System.Drawing.Point(88, 150)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(75, 25)
         Me.Label4.TabIndex = 7
@@ -258,16 +259,17 @@ Partial Class frmGestionClientes
         '
         'txtCedula
         '
-        Me.txtCedula.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "cedula", True))
-        Me.txtCedula.Location = New System.Drawing.Point(217, 181)
+        Me.txtCedula.Location = New System.Drawing.Point(163, 147)
+        Me.txtCedula.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCedula.Name = "txtCedula"
-        Me.txtCedula.Size = New System.Drawing.Size(237, 32)
+        Me.txtCedula.Size = New System.Drawing.Size(179, 32)
         Me.txtCedula.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(103, 140)
+        Me.Label3.Location = New System.Drawing.Point(77, 114)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 25)
         Me.Label3.TabIndex = 5
@@ -275,16 +277,17 @@ Partial Class frmGestionClientes
         '
         'txtApellido
         '
-        Me.txtApellido.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "apellido", True))
-        Me.txtApellido.Location = New System.Drawing.Point(217, 137)
+        Me.txtApellido.Location = New System.Drawing.Point(163, 111)
+        Me.txtApellido.Margin = New System.Windows.Forms.Padding(2)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(237, 32)
+        Me.txtApellido.Size = New System.Drawing.Size(179, 32)
         Me.txtApellido.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(103, 96)
+        Me.Label2.Location = New System.Drawing.Point(77, 78)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 25)
         Me.Label2.TabIndex = 3
@@ -292,16 +295,17 @@ Partial Class frmGestionClientes
         '
         'txtNombre
         '
-        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "nombre", True))
-        Me.txtNombre.Location = New System.Drawing.Point(217, 93)
+        Me.txtNombre.Location = New System.Drawing.Point(163, 76)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(237, 32)
+        Me.txtNombre.Size = New System.Drawing.Size(179, 32)
         Me.txtNombre.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(414, 40)
+        Me.Label1.Location = New System.Drawing.Point(310, 32)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(32, 25)
         Me.Label1.TabIndex = 1
@@ -309,11 +313,11 @@ Partial Class frmGestionClientes
         '
         'txtIDCLIENTE
         '
-        Me.txtIDCLIENTE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "idCliente", True))
         Me.txtIDCLIENTE.Enabled = False
-        Me.txtIDCLIENTE.Location = New System.Drawing.Point(460, 37)
+        Me.txtIDCLIENTE.Location = New System.Drawing.Point(345, 30)
+        Me.txtIDCLIENTE.Margin = New System.Windows.Forms.Padding(2)
         Me.txtIDCLIENTE.Name = "txtIDCLIENTE"
-        Me.txtIDCLIENTE.Size = New System.Drawing.Size(146, 32)
+        Me.txtIDCLIENTE.Size = New System.Drawing.Size(110, 32)
         Me.txtIDCLIENTE.TabIndex = 0
         '
         'ClienteTableAdapter
@@ -324,10 +328,24 @@ Partial Class frmGestionClientes
         '
         Me.T_ClienteTableAdapter.ClearBeforeFill = True
         '
-        'ClienteBindingSource
+        'dgvClientes
         '
-        Me.ClienteBindingSource.DataMember = "Cliente"
-        Me.ClienteBindingSource.DataSource = Me.KelaniDataSet
+        Me.dgvClientes.AllowUserToAddRows = False
+        Me.dgvClientes.AllowUserToDeleteRows = False
+        Me.dgvClientes.AutoGenerateColumns = False
+        Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.TipoClDataGridViewTextBoxColumn})
+        Me.dgvClientes.DataSource = Me.VwClientesBindingSource1
+        Me.dgvClientes.Location = New System.Drawing.Point(9, 325)
+        Me.dgvClientes.Name = "dgvClientes"
+        Me.dgvClientes.ReadOnly = True
+        Me.dgvClientes.Size = New System.Drawing.Size(823, 269)
+        Me.dgvClientes.TabIndex = 2
+        '
+        'VwClientesBindingSource1
+        '
+        Me.VwClientesBindingSource1.DataMember = "VwClientes"
+        Me.VwClientesBindingSource1.DataSource = Me.KelaniDataSet
         '
         'IdClienteDataGridViewTextBoxColumn
         '
@@ -341,67 +359,78 @@ Partial Class frmGestionClientes
         Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
         Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ApellidoDataGridViewTextBoxColumn
         '
         Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido"
         Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "apellido"
         Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
-        '
-        'CedulaDataGridViewTextBoxColumn
-        '
-        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "cedula"
-        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "cedula"
-        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
+        Me.ApellidoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TelefonoDataGridViewTextBoxColumn
         '
         Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono"
         Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "telefono"
         Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
-        '
-        'DireccionDataGridViewTextBoxColumn
-        '
-        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "direccion"
-        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
+        Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmailDataGridViewTextBoxColumn
         '
         Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
         Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'IdTClienteDataGridViewTextBoxColumn
+        'CedulaDataGridViewTextBoxColumn
         '
-        Me.IdTClienteDataGridViewTextBoxColumn.DataPropertyName = "idT_Cliente"
-        Me.IdTClienteDataGridViewTextBoxColumn.HeaderText = "idT_Cliente"
-        Me.IdTClienteDataGridViewTextBoxColumn.Name = "IdTClienteDataGridViewTextBoxColumn"
+        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "cedula"
+        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "cedula"
+        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
+        Me.CedulaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DireccionDataGridViewTextBoxColumn
+        '
+        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "direccion"
+        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "direccion"
+        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
+        Me.DireccionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TipoClDataGridViewTextBoxColumn
+        '
+        Me.TipoClDataGridViewTextBoxColumn.DataPropertyName = "tipo_Cl"
+        Me.TipoClDataGridViewTextBoxColumn.HeaderText = "tipo_Cl"
+        Me.TipoClDataGridViewTextBoxColumn.Name = "TipoClDataGridViewTextBoxColumn"
+        Me.TipoClDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'VwClientesTableAdapter1
+        '
+        Me.VwClientesTableAdapter1.ClearBeforeFill = True
         '
         'frmGestionClientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1126, 746)
-        Me.Controls.Add(Me.gbGestionCl)
+        Me.ClientSize = New System.Drawing.Size(844, 606)
         Me.Controls.Add(Me.dgvClientes)
+        Me.Controls.Add(Me.gbGestionCl)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "frmGestionClientes"
         Me.Text = "Gestión de clientes - Kelani"
-        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbGestionCl.ResumeLayout(False)
         Me.gbGestionCl.PerformLayout()
         CType(Me.TClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VwClientesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents dgvClientes As DataGridView
     Friend WithEvents KelaniDataSet As KelaniDataSet
     Friend WithEvents ClienteTableAdapter As KelaniDataSetTableAdapters.ClienteTableAdapter
     Friend WithEvents gbGestionCl As GroupBox
@@ -429,13 +458,16 @@ Partial Class frmGestionClientes
     Friend WithEvents KelaniDataSetBindingSource1 As BindingSource
     Friend WithEvents TClienteBindingSource As BindingSource
     Friend WithEvents T_ClienteTableAdapter As KelaniDataSetTableAdapters.T_ClienteTableAdapter
+    Friend WithEvents ClienteBindingSource As BindingSource
+    Friend WithEvents dgvClientes As DataGridView
     Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdTClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ClienteBindingSource As BindingSource
+    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TipoClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VwClientesBindingSource1 As BindingSource
+    Friend WithEvents VwClientesTableAdapter1 As KelaniDataSetTableAdapters.VwClientesTableAdapter
 End Class
