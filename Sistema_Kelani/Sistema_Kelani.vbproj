@@ -198,6 +198,12 @@
     <Compile Include="TipoMovimientoInventario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventanas de facturación\frmVistaDeEncabezados.Designer.vb">
+      <DependentUpon>frmVistaDeEncabezados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas de facturación\frmVistaDeEncabezados.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmLogIn.resx">
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipoMovimientoInventario.resx">
       <DependentUpon>TipoMovimientoInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas de facturación\frmVistaDeEncabezados.resx">
+      <DependentUpon>frmVistaDeEncabezados.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

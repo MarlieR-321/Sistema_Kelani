@@ -23,8 +23,8 @@ Partial Class frmFactEncabezado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtRUC = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -50,6 +50,10 @@ Partial Class frmFactEncabezado
         Me.txtNumeroFactura = New System.Windows.Forms.TextBox()
         Me.txtIDFactura = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.VerEncabezadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,15 +65,25 @@ Partial Class frmFactEncabezado
         Me.VwClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.VwClientesTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
+        Me.FacturaEncTableAdapter1 = New Sistema_Kelani.KelaniDataSetTableAdapters.FacturaEncTableAdapter()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.VwClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button5)
+        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.txtRUC)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.txtTotal)
@@ -84,7 +98,7 @@ Partial Class frmFactEncabezado
         Me.GroupBox1.Controls.Add(Me.txtIDFactura)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 13)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 33)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(617, 802)
         Me.GroupBox1.TabIndex = 0
@@ -109,15 +123,15 @@ Partial Class frmFactEncabezado
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(228, 686)
+        Me.txtTotal.Location = New System.Drawing.Point(176, 686)
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(364, 26)
+        Me.txtTotal.Size = New System.Drawing.Size(96, 26)
         Me.txtTotal.TabIndex = 10
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(180, 689)
+        Me.Label10.Location = New System.Drawing.Point(128, 689)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 20)
         Me.Label10.TabIndex = 9
@@ -127,7 +141,7 @@ Partial Class frmFactEncabezado
         '
         Me.txtIVA.Location = New System.Drawing.Point(65, 686)
         Me.txtIVA.Name = "txtIVA"
-        Me.txtIVA.Size = New System.Drawing.Size(100, 26)
+        Me.txtIVA.Size = New System.Drawing.Size(57, 26)
         Me.txtIVA.TabIndex = 8
         '
         'Label9
@@ -245,21 +259,21 @@ Partial Class frmFactEncabezado
         '
         Me.dgv_Clientes.AllowUserToAddRows = False
         Me.dgv_Clientes.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.dgv_Clientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.dgv_Clientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgv_Clientes.AutoGenerateColumns = False
         Me.dgv_Clientes.BackgroundColor = System.Drawing.SystemColors.Info
         Me.dgv_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.TipoClDataGridViewTextBoxColumn})
         Me.dgv_Clientes.DataSource = Me.VwClientesBindingSource
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_Clientes.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_Clientes.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgv_Clientes.GridColor = System.Drawing.Color.Bisque
         Me.dgv_Clientes.Location = New System.Drawing.Point(18, 79)
         Me.dgv_Clientes.Name = "dgv_Clientes"
@@ -316,6 +330,39 @@ Partial Class frmFactEncabezado
         Me.Label1.Size = New System.Drawing.Size(104, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "iD de factura:"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(278, 686)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(314, 28)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Guardar encabezado y continuar a detalle"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(22, 735)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(276, 28)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Guardar sin continuar a detalle"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerEncabezadosToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(647, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'VerEncabezadosToolStripMenuItem
+        '
+        Me.VerEncabezadosToolStripMenuItem.Name = "VerEncabezadosToolStripMenuItem"
+        Me.VerEncabezadosToolStripMenuItem.Size = New System.Drawing.Size(106, 20)
+        Me.VerEncabezadosToolStripMenuItem.Text = "Ver encabezados"
         '
         'IdClienteDataGridViewTextBoxColumn
         '
@@ -387,22 +434,56 @@ Partial Class frmFactEncabezado
         '
         Me.VwClientesTableAdapter.ClearBeforeFill = True
         '
+        'FacturaEncTableAdapter1
+        '
+        Me.FacturaEncTableAdapter1.ClearBeforeFill = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(304, 735)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(88, 28)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Editar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(398, 735)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(88, 28)
+        Me.Button4.TabIndex = 16
+        Me.Button4.Text = "Eliminar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(492, 735)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(88, 28)
+        Me.Button5.TabIndex = 17
+        Me.Button5.Text = "Nuevo"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'frmFactEncabezado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(647, 827)
+        Me.ClientSize = New System.Drawing.Size(647, 864)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Name = "frmFactEncabezado"
-        Me.Text = "Factura Encabezado"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.dgv_Clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         CType(Me.VwClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -442,4 +523,12 @@ Partial Class frmFactEncabezado
     Friend WithEvents TipoClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label11 As Label
     Friend WithEvents txtRUC As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents VerEncabezadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FacturaEncTableAdapter1 As KelaniDataSetTableAdapters.FacturaEncTableAdapter
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
 End Class
