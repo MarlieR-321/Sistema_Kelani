@@ -43,6 +43,7 @@ Partial Class frmPrincipal
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BodegaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,14 +52,13 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InventarioToolStripMenuItem, Me.CatalogosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.SeguridadToolStripMenuItem, Me.SistemaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(868, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(651, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.BodegaToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.InventarioToolStripMenuItem.Text = "Inventario"
@@ -66,13 +66,13 @@ Partial Class frmPrincipal
         'FacturacionToolStripMenuItem
         '
         Me.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem"
-        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FacturacionToolStripMenuItem.Text = "Facturacion"
         '
         'IngresosToolStripMenuItem
         '
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
-        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IngresosToolStripMenuItem.Text = "Ingresos"
         '
         'CatalogosToolStripMenuItem
@@ -180,17 +180,22 @@ Partial Class frmPrincipal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'BodegaToolStripMenuItem
+        '
+        Me.BodegaToolStripMenuItem.Name = "BodegaToolStripMenuItem"
+        Me.BodegaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BodegaToolStripMenuItem.Text = "Bodega"
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(868, 444)
+        Me.ClientSize = New System.Drawing.Size(651, 361)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrincipal"
         Me.Text = "Sistema Kelani"
         Me.MenuStrip1.ResumeLayout(False)
@@ -221,4 +226,5 @@ Partial Class frmPrincipal
     Friend WithEvents AsignarOpcionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SistemaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BodegaToolStripMenuItem As ToolStripMenuItem
 End Class

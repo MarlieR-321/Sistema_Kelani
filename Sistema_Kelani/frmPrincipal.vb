@@ -33,4 +33,8 @@
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
+
+    Private Sub BodegaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BodegaToolStripMenuItem.Click
+        frmBodega.Show()
+    End Sub
 End Class

@@ -26,6 +26,8 @@ Partial Class frmFactEncabezado
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtRUC = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtIVA = New System.Windows.Forms.TextBox()
@@ -42,6 +44,12 @@ Partial Class frmFactEncabezado
         Me.txtCajaDeBusqueda = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgv_Clientes = New System.Windows.Forms.DataGridView()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNumeroFactura = New System.Windows.Forms.TextBox()
+        Me.txtIDFactura = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,15 +60,7 @@ Partial Class frmFactEncabezado
         Me.TipoClDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VwClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNumeroFactura = New System.Windows.Forms.TextBox()
-        Me.txtIDFactura = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.VwClientesTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtRUC = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +90,22 @@ Partial Class frmFactEncabezado
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Factura Encabezado"
+        '
+        'txtRUC
+        '
+        Me.txtRUC.Location = New System.Drawing.Point(76, 70)
+        Me.txtRUC.Name = "txtRUC"
+        Me.txtRUC.Size = New System.Drawing.Size(516, 26)
+        Me.txtRUC.TabIndex = 12
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(22, 73)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(48, 20)
+        Me.Label11.TabIndex = 11
+        Me.Label11.Text = "RUC:"
         '
         'txtTotal
         '
@@ -252,6 +268,55 @@ Partial Class frmFactEncabezado
         Me.dgv_Clientes.Size = New System.Drawing.Size(529, 193)
         Me.dgv_Clientes.TabIndex = 0
         '
+        'dtpFecha
+        '
+        Me.dtpFecha.Location = New System.Drawing.Point(171, 104)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(421, 26)
+        Me.dtpFecha.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(18, 107)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(147, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Selecciona la fecha"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(234, 37)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(145, 20)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Número de factura:"
+        '
+        'txtNumeroFactura
+        '
+        Me.txtNumeroFactura.Location = New System.Drawing.Point(385, 34)
+        Me.txtNumeroFactura.Name = "txtNumeroFactura"
+        Me.txtNumeroFactura.Size = New System.Drawing.Size(207, 26)
+        Me.txtNumeroFactura.TabIndex = 2
+        '
+        'txtIDFactura
+        '
+        Me.txtIDFactura.Location = New System.Drawing.Point(128, 34)
+        Me.txtIDFactura.Name = "txtIDFactura"
+        Me.txtIDFactura.ReadOnly = True
+        Me.txtIDFactura.Size = New System.Drawing.Size(100, 26)
+        Me.txtIDFactura.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(18, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "iD de factura:"
+        '
         'IdClienteDataGridViewTextBoxColumn
         '
         Me.IdClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente"
@@ -318,80 +383,15 @@ Partial Class frmFactEncabezado
         Me.KelaniDataSet.DataSetName = "KelaniDataSet"
         Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(171, 104)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(421, 26)
-        Me.dtpFecha.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 107)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(147, 20)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Selecciona la fecha"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(234, 37)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(145, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Número de factura:"
-        '
-        'txtNumeroFactura
-        '
-        Me.txtNumeroFactura.Location = New System.Drawing.Point(385, 34)
-        Me.txtNumeroFactura.Name = "txtNumeroFactura"
-        Me.txtNumeroFactura.Size = New System.Drawing.Size(207, 26)
-        Me.txtNumeroFactura.TabIndex = 2
-        '
-        'txtIDFactura
-        '
-        Me.txtIDFactura.Location = New System.Drawing.Point(128, 34)
-        Me.txtIDFactura.Name = "txtIDFactura"
-        Me.txtIDFactura.ReadOnly = True
-        Me.txtIDFactura.Size = New System.Drawing.Size(100, 26)
-        Me.txtIDFactura.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 37)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "iD de factura:"
-        '
         'VwClientesTableAdapter
         '
         Me.VwClientesTableAdapter.ClearBeforeFill = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(22, 73)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 20)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "RUC:"
-        '
-        'txtRUC
-        '
-        Me.txtRUC.Location = New System.Drawing.Point(76, 70)
-        Me.txtRUC.Name = "txtRUC"
-        Me.txtRUC.Size = New System.Drawing.Size(516, 26)
-        Me.txtRUC.TabIndex = 12
         '
         'frmFactEncabezado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1244, 827)
+        Me.ClientSize = New System.Drawing.Size(647, 827)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmFactEncabezado"
         Me.Text = "Factura Encabezado"
