@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Clases\Usuario.vb" />
     <Compile Include="frmLogIn.designer.vb">
       <DependentUpon>frmLogIn.vb</DependentUpon>
     </Compile>

@@ -23,6 +23,9 @@ Partial Class frmTiposDeClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -35,9 +38,9 @@ Partial Class frmTiposDeClientes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.T_ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.T_ClienteTableAdapter()
         Me.IdTClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoClDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.T_ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.T_ClienteTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.TClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,9 +59,9 @@ Partial Class frmTiposDeClientes
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(9, 10)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(414, 141)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -67,7 +70,7 @@ Partial Class frmTiposDeClientes
         'btnNuevo
         '
         Me.btnNuevo.Location = New System.Drawing.Point(313, 102)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(85, 28)
         Me.btnNuevo.TabIndex = 7
@@ -77,7 +80,7 @@ Partial Class frmTiposDeClientes
         'btnEliminar
         '
         Me.btnEliminar.Location = New System.Drawing.Point(203, 102)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(85, 28)
         Me.btnEliminar.TabIndex = 6
@@ -87,7 +90,7 @@ Partial Class frmTiposDeClientes
         'btnEditar
         '
         Me.btnEditar.Location = New System.Drawing.Point(103, 102)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(85, 28)
         Me.btnEditar.TabIndex = 5
@@ -97,7 +100,7 @@ Partial Class frmTiposDeClientes
         'btnGuardar
         '
         Me.btnGuardar.Location = New System.Drawing.Point(4, 102)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(85, 28)
         Me.btnGuardar.TabIndex = 4
@@ -106,9 +109,8 @@ Partial Class frmTiposDeClientes
         '
         'txtTIPO
         '
-        Me.txtTIPO.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TClienteBindingSource, "tipo_Cl", True))
         Me.txtTIPO.Location = New System.Drawing.Point(234, 63)
-        Me.txtTIPO.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTIPO.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTIPO.Name = "txtTIPO"
         Me.txtTIPO.Size = New System.Drawing.Size(164, 26)
         Me.txtTIPO.TabIndex = 3
@@ -125,9 +127,8 @@ Partial Class frmTiposDeClientes
         '
         'txtID
         '
-        Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TClienteBindingSource, "idT_Cliente", True))
         Me.txtID.Location = New System.Drawing.Point(234, 31)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(47, 26)
@@ -157,22 +158,37 @@ Partial Class frmTiposDeClientes
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdTClienteDataGridViewTextBoxColumn, Me.TipoClDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.TClienteBindingSource
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Location = New System.Drawing.Point(9, 155)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(414, 284)
         Me.DataGridView1.TabIndex = 1
-        '
-        'T_ClienteTableAdapter
-        '
-        Me.T_ClienteTableAdapter.ClearBeforeFill = True
         '
         'IdTClienteDataGridViewTextBoxColumn
         '
@@ -189,14 +205,20 @@ Partial Class frmTiposDeClientes
         Me.TipoClDataGridViewTextBoxColumn.Name = "TipoClDataGridViewTextBoxColumn"
         Me.TipoClDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'T_ClienteTableAdapter
+        '
+        Me.T_ClienteTableAdapter.ClearBeforeFill = True
+        '
         'frmTiposDeClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(436, 448)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "frmTiposDeClientes"
         Me.Text = "frmTiposDeClientes"
         Me.GroupBox1.ResumeLayout(False)

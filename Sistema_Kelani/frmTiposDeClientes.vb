@@ -40,4 +40,11 @@
         Me.T_ClienteTableAdapter.Fill(Me.KelaniDataSet.T_Cliente)
 
     End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
+        txtID.Text = DataGridView1.CurrentRow.Cells.Item(0).Value.ToString()
+        txtTIPO.Text = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString()
+
+    End Sub
 End Class

@@ -40,7 +40,7 @@ Partial Class LogIn
         '
         Me.PictureBox1.Image = Global.Sistema_Kelani.My.Resources.Resources.k_500
         Me.PictureBox1.Location = New System.Drawing.Point(340, 36)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(380, 380)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -57,7 +57,7 @@ Partial Class LogIn
         Me.Panel1.Controls.Add(Me.lblUser)
         Me.Panel1.Controls.Add(Me.lblLogIn)
         Me.Panel1.Location = New System.Drawing.Point(21, 36)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(306, 380)
         Me.Panel1.TabIndex = 1
@@ -68,7 +68,7 @@ Partial Class LogIn
         Me.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLogIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogIn.Location = New System.Drawing.Point(92, 284)
-        Me.btnLogIn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLogIn.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogIn.Name = "btnLogIn"
         Me.btnLogIn.Size = New System.Drawing.Size(132, 27)
         Me.btnLogIn.TabIndex = 5
@@ -78,8 +78,9 @@ Partial Class LogIn
         'txtClave
         '
         Me.txtClave.Location = New System.Drawing.Point(55, 234)
-        Me.txtClave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtClave.Margin = New System.Windows.Forms.Padding(2)
         Me.txtClave.Name = "txtClave"
+        Me.txtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtClave.Size = New System.Drawing.Size(195, 20)
         Me.txtClave.TabIndex = 4
         '
@@ -97,7 +98,7 @@ Partial Class LogIn
         'txtUserName
         '
         Me.txtUserName.Location = New System.Drawing.Point(55, 159)
-        Me.txtUserName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtUserName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(195, 20)
         Me.txtUserName.TabIndex = 2
@@ -130,7 +131,7 @@ Partial Class LogIn
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Location = New System.Drawing.Point(711, 3)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(33, 29)
         Me.btnSalir.TabIndex = 2
@@ -149,7 +150,7 @@ Partial Class LogIn
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "LogIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
