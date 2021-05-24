@@ -26,6 +26,7 @@ Partial Class frmPrincipal
         Me.InventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BodegaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatalogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +44,7 @@ Partial Class frmPrincipal
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BodegaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeMovimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +59,7 @@ Partial Class frmPrincipal
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.BodegaToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.BodegaToolStripMenuItem, Me.TipoDeMovimientoToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.InventarioToolStripMenuItem.Text = "Inventario"
@@ -66,14 +67,20 @@ Partial Class frmPrincipal
         'FacturacionToolStripMenuItem
         '
         Me.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem"
-        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.FacturacionToolStripMenuItem.Text = "Facturacion"
         '
         'IngresosToolStripMenuItem
         '
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
-        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.IngresosToolStripMenuItem.Text = "Ingresos"
+        '
+        'BodegaToolStripMenuItem
+        '
+        Me.BodegaToolStripMenuItem.Name = "BodegaToolStripMenuItem"
+        Me.BodegaToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.BodegaToolStripMenuItem.Text = "Bodega"
         '
         'CatalogosToolStripMenuItem
         '
@@ -183,11 +190,11 @@ Partial Class frmPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'BodegaToolStripMenuItem
+        'TipoDeMovimientoToolStripMenuItem
         '
-        Me.BodegaToolStripMenuItem.Name = "BodegaToolStripMenuItem"
-        Me.BodegaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.BodegaToolStripMenuItem.Text = "Bodega"
+        Me.TipoDeMovimientoToolStripMenuItem.Name = "TipoDeMovimientoToolStripMenuItem"
+        Me.TipoDeMovimientoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.TipoDeMovimientoToolStripMenuItem.Text = "Tipo de Movimiento"
         '
         'frmPrincipal
         '
@@ -227,4 +234,5 @@ Partial Class frmPrincipal
     Friend WithEvents SistemaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BodegaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoDeMovimientoToolStripMenuItem As ToolStripMenuItem
 End Class

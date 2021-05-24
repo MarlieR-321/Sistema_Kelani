@@ -37,4 +37,8 @@
     Private Sub BodegaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BodegaToolStripMenuItem.Click
         frmBodega.Show()
     End Sub
+
+    Private Sub TipoDeMovimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeMovimientoToolStripMenuItem.Click
+        frmTipoMovimientoInventario.Show()
+    End Sub
 End Class
