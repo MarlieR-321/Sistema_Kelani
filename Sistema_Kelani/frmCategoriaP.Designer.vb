@@ -55,9 +55,11 @@ Partial Class frmCategoriaP
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.DgvCategoria)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 13)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 16)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(468, 275)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(624, 338)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda y Seleccion"
@@ -65,18 +67,20 @@ Partial Class frmCategoriaP
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(109, 30)
+        Me.txtBuscar.Location = New System.Drawing.Point(145, 37)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(353, 24)
+        Me.txtBuscar.Size = New System.Drawing.Size(469, 29)
         Me.txtBuscar.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(9, 32)
+        Me.Label1.Location = New System.Drawing.Point(12, 39)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 18)
+        Me.Label1.Size = New System.Drawing.Size(73, 24)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Buscar:"
         '
@@ -89,10 +93,11 @@ Partial Class frmCategoriaP
         Me.DgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCategoria.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_CategoriaP, Me.NombreCatDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
         Me.DgvCategoria.DataSource = Me.CategoriaBindingSource
-        Me.DgvCategoria.Location = New System.Drawing.Point(6, 60)
+        Me.DgvCategoria.Location = New System.Drawing.Point(8, 74)
+        Me.DgvCategoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DgvCategoria.Name = "DgvCategoria"
         Me.DgvCategoria.ReadOnly = True
-        Me.DgvCategoria.Size = New System.Drawing.Size(456, 209)
+        Me.DgvCategoria.Size = New System.Drawing.Size(608, 257)
         Me.DgvCategoria.TabIndex = 0
         '
         'id_CategoriaP
@@ -138,27 +143,31 @@ Partial Class frmCategoriaP
         Me.GroupBox2.Controls.Add(Me.txtCategoria)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 295)
+        Me.GroupBox2.Location = New System.Drawing.Point(17, 363)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(468, 208)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(624, 256)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
         '
         'txtIdCat
         '
-        Me.txtIdCat.Location = New System.Drawing.Point(401, 63)
+        Me.txtIdCat.Location = New System.Drawing.Point(535, 78)
+        Me.txtIdCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtIdCat.Name = "txtIdCat"
-        Me.txtIdCat.Size = New System.Drawing.Size(61, 26)
+        Me.txtIdCat.Size = New System.Drawing.Size(80, 30)
         Me.txtIdCat.TabIndex = 18
         Me.txtIdCat.Visible = False
         '
         'btnEliminar
         '
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(360, 158)
+        Me.btnEliminar.Location = New System.Drawing.Point(480, 194)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(88, 29)
+        Me.btnEliminar.Size = New System.Drawing.Size(117, 36)
         Me.btnEliminar.TabIndex = 17
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
@@ -166,9 +175,10 @@ Partial Class frmCategoriaP
         'btnEditar
         '
         Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.Location = New System.Drawing.Point(196, 158)
+        Me.btnEditar.Location = New System.Drawing.Point(261, 194)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(92, 29)
+        Me.btnEditar.Size = New System.Drawing.Size(123, 36)
         Me.btnEditar.TabIndex = 16
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = True
@@ -176,9 +186,10 @@ Partial Class frmCategoriaP
         'btnIngresar
         '
         Me.btnIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIngresar.Location = New System.Drawing.Point(23, 158)
+        Me.btnIngresar.Location = New System.Drawing.Point(31, 194)
+        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(97, 29)
+        Me.btnIngresar.Size = New System.Drawing.Size(129, 36)
         Me.btnIngresar.TabIndex = 15
         Me.btnIngresar.Text = "Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = True
@@ -186,36 +197,40 @@ Partial Class frmCategoriaP
         'txtDescripcion
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(123, 91)
+        Me.txtDescripcion.Location = New System.Drawing.Point(164, 112)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(223, 24)
+        Me.txtDescripcion.Size = New System.Drawing.Size(296, 29)
         Me.txtDescripcion.TabIndex = 9
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 94)
+        Me.Label3.Location = New System.Drawing.Point(12, 116)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(91, 18)
+        Me.Label3.Size = New System.Drawing.Size(115, 24)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Descripción:"
         '
         'txtCategoria
         '
         Me.txtCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCategoria.Location = New System.Drawing.Point(123, 36)
+        Me.txtCategoria.Location = New System.Drawing.Point(164, 44)
+        Me.txtCategoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCategoria.Name = "txtCategoria"
-        Me.txtCategoria.Size = New System.Drawing.Size(223, 24)
+        Me.txtCategoria.Size = New System.Drawing.Size(296, 29)
         Me.txtCategoria.TabIndex = 7
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(9, 39)
+        Me.Label2.Location = New System.Drawing.Point(12, 48)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 18)
+        Me.Label2.Size = New System.Drawing.Size(84, 24)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Nombre:"
         '
@@ -225,12 +240,13 @@ Partial Class frmCategoriaP
         '
         'frmCategoriaP
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(491, 513)
+        Me.ClientSize = New System.Drawing.Size(655, 631)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmCategoriaP"
         Me.Text = "Categorias"
         Me.GroupBox1.ResumeLayout(False)
