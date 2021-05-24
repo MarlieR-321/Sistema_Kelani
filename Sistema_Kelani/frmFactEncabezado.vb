@@ -1,13 +1,13 @@
 ﻿Public Class frmFactEncabezado
-    Private Sub bIngresar_Click(sender As Object, e As EventArgs)
-        frmFactDetalles.Show()
-    End Sub
-
     Private Sub bEditar_Click(sender As Object, e As EventArgs)
         frmFactDetalles.Show()
     End Sub
 
     Private Sub frmFactEncabezado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet1.vw_FacturaDet' Puede moverla o quitarla según sea necesario.
+        Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet1.vw_FacturaDet)
+        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.vw_FacturaDet' Puede moverla o quitarla según sea necesario.
+        Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet.vw_FacturaDet)
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.VwClientes' Puede moverla o quitarla según sea necesario.
         Me.VwClientesTableAdapter.Fill(Me.KelaniDataSet.VwClientes)
 
@@ -37,4 +37,6 @@
     Private Sub VerEncabezadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerEncabezadosToolStripMenuItem.Click
         frmVistaDeEncabezados.Show()
     End Sub
+
+
 End Class
