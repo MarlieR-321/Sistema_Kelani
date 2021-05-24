@@ -37,26 +37,28 @@ Partial Class frmFactEncabezado
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.VwClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNumeroFactura = New System.Windows.Forms.TextBox()
         Me.txtIDFactura = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.VwClientesTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
-        Me.FacturaEncTableAdapter1 = New Sistema_Kelani.KelaniDataSetTableAdapters.FacturaEncTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.VwClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
+        Me.VwClientesTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
+        Me.FacturaEncTableAdapter1 = New Sistema_Kelani.KelaniDataSetTableAdapters.FacturaEncTableAdapter()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.VerEncabezadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         CType(Me.VwClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -64,7 +66,7 @@ Partial Class frmFactEncabezado
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 27)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1158, 359)
         Me.GroupBox1.TabIndex = 0
@@ -187,16 +189,6 @@ Partial Class frmFactEncabezado
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Nombre:"
         '
-        'VwClientesBindingSource
-        '
-        Me.VwClientesBindingSource.DataMember = "VwClientes"
-        Me.VwClientesBindingSource.DataSource = Me.KelaniDataSet
-        '
-        'KelaniDataSet
-        '
-        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
-        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'dtpFecha
         '
         Me.dtpFecha.Location = New System.Drawing.Point(748, 25)
@@ -246,14 +238,6 @@ Partial Class frmFactEncabezado
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "iD de factura:"
         '
-        'VwClientesTableAdapter
-        '
-        Me.VwClientesTableAdapter.ClearBeforeFill = True
-        '
-        'FacturaEncTableAdapter1
-        '
-        Me.FacturaEncTableAdapter1.ClearBeforeFill = True
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(986, 159)
@@ -300,31 +284,59 @@ Partial Class frmFactEncabezado
         Me.txtTotal.Size = New System.Drawing.Size(96, 26)
         Me.txtTotal.TabIndex = 10
         '
-        'GroupBox4
+        'VwClientesBindingSource
         '
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 377)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1158, 475)
-        Me.GroupBox4.TabIndex = 15
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Detalles"
+        Me.VwClientesBindingSource.DataMember = "VwClientes"
+        Me.VwClientesBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'KelaniDataSet
+        '
+        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
+        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VwClientesTableAdapter
+        '
+        Me.VwClientesTableAdapter.ClearBeforeFill = True
+        '
+        'FacturaEncTableAdapter1
+        '
+        Me.FacturaEncTableAdapter1.ClearBeforeFill = True
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerEncabezadosToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1176, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'VerEncabezadosToolStripMenuItem
+        '
+        Me.VerEncabezadosToolStripMenuItem.Name = "VerEncabezadosToolStripMenuItem"
+        Me.VerEncabezadosToolStripMenuItem.Size = New System.Drawing.Size(106, 20)
+        Me.VerEncabezadosToolStripMenuItem.Text = "Ver encabezados"
         '
         'frmFactEncabezado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1176, 864)
-        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmFactEncabezado"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.VwClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.VwClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -356,5 +368,6 @@ Partial Class frmFactEncabezado
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtTotal As TextBox
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents VerEncabezadosToolStripMenuItem As ToolStripMenuItem
 End Class

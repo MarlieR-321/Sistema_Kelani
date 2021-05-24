@@ -89,3 +89,4 @@ C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_K
 C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.exe
 C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.xml
 C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.pdb
+C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerClientes.resources

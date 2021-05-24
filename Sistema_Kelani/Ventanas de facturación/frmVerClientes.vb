@@ -10,6 +10,11 @@
         frmFactEncabezado.txtNombreCliente.Text = dgvClientes.CurrentRow.Cells.Item(1).Value.ToString
         frmFactEncabezado.txtIdentificacion.Text = dgvClientes.CurrentRow.Cells.Item(5).Value.ToString
         frmFactEncabezado.rtbDirCliente.Text = dgvClientes.CurrentRow.Cells.Item(6).Value.ToString
+
+        frmVistaDeEncabezados.txtIDCliente.Text = dgvClientes.CurrentRow.Cells.Item(0).Value.ToString
+        frmVistaDeEncabezados.txtNombreCliente.Text = dgvClientes.CurrentRow.Cells.Item(1).Value.ToString
+        frmVistaDeEncabezados.txtIdentificacion.Text = dgvClientes.CurrentRow.Cells.Item(5).Value.ToString
+        frmVistaDeEncabezados.rtbDirCliente.Text = dgvClientes.CurrentRow.Cells.Item(6).Value.ToString
         Me.Close()
     End Sub
 
