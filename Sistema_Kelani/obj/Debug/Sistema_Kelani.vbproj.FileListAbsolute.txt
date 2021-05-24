@@ -92,3 +92,4 @@ C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_K
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerClientes.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerClientes.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVistaDeEncabezados.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTipoMovimientoInventario.resources

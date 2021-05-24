@@ -11,6 +11,8 @@
 End Class
 
 Namespace KelaniDataSetTableAdapters
+    Partial Public Class vwProductosTableAdapter
+    End Class
 
     Partial Public Class ProductoTableAdapter
     End Class
