@@ -64,3 +64,4 @@ C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTiposDeClientes.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmWelcome.resources
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVistaDeEncabezados.resources
+C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerClientes.resources
