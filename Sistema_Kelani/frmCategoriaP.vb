@@ -102,4 +102,8 @@ Public Class frmCategoriaP
 
         End Try
     End Sub
+
+    Private Sub DgvCategoria_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvCategoria.CellContentClick
+
+    End Sub
 End Class

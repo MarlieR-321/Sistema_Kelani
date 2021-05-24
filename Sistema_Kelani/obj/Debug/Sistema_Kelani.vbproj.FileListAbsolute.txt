@@ -64,3 +64,28 @@ C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTiposDeClientes.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmWelcome.resources
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVistaDeEncabezados.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.exe.config
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.exe
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.pdb
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\bin\Debug\Sistema_Kelani.xml
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.vbprojResolveAssemblyReference.cache
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.LogIn.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmPrincipal.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmBodega.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmCategoriaP.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactDetalles.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmFactEncabezado.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmGestionClientes.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmInventario.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmProductos.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTiposDeClientes.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmUMedida.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmWelcome.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.MovimientoInventario.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.Resources.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.TipoMovimientoInventario.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVistaDeEncabezados.resources
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.vbproj.GenerateResource.Cache
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.exe
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.xml
+C:\Users\DELL\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.pdb
