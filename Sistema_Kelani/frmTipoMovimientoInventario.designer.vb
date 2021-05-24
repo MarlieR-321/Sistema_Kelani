@@ -77,7 +77,7 @@ Partial Class frmTipoMovimientoInventario
         '
         'txtNombTM
         '
-        Me.txtNombTM.Location = New System.Drawing.Point(26, 53)
+        Me.txtNombTM.Location = New System.Drawing.Point(42, 53)
         Me.txtNombTM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtNombTM.Name = "txtNombTM"
         Me.txtNombTM.Size = New System.Drawing.Size(210, 26)

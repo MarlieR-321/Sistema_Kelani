@@ -8,12 +8,7 @@ Public Class frmTipoMovimientoInventario
         Me.T_mov_invTableAdapter.Fill(Me.KelaniDataSet.t_mov_inv)
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.t_mov_inv' Puede moverla o quitarla según sea necesario.
         Me.T_mov_invTableAdapter.Fill(Me.KelaniDataSet.t_mov_inv)
-        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.t_mov_inv' Puede moverla o quitarla según sea necesario.
-        Me.T_mov_invTableAdapter.Fill(Me.KelaniDataSet.t_mov_inv)
-        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.t_mov_inv' Puede moverla o quitarla según sea necesario.
-        Me.T_mov_invTableAdapter.Fill(Me.KelaniDataSet.t_mov_inv)
-        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.t_mov_inv' Puede moverla o quitarla según sea necesario.
-        Me.T_mov_invTableAdapter.Fill(Me.KelaniDataSet.t_mov_inv)
+
 
     End Sub
 
