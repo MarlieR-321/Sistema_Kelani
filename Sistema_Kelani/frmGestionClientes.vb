@@ -1,4 +1,6 @@
-﻿Public Class frmGestionClientes
+﻿Imports System.Data.SqlClient
+
+Public Class frmGestionClientes
     Private Sub frmGestionClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.T_Cliente' Puede moverla o quitarla según sea necesario.
         Me.T_ClienteTableAdapter.Fill(Me.KelaniDataSet.T_Cliente)
@@ -18,11 +20,13 @@
         'Verifica que ninguno de los campos del formulario estén vacíos.
         'Retorna 1 si están vacíos
 
-        If (String.IsNullOrEmpty(txtApellido.Text) Or
+        If String.IsNullOrEmpty(txtApellido.Text) Or
             String.IsNullOrEmpty(txtCedula.Text) Or
             String.IsNullOrEmpty(txtEmail.Text) Or
             String.IsNullOrEmpty(txtNombre.Text) Or
-            String.IsNullOrEmpty(txttelefono.Text)) Then
+            String.IsNullOrEmpty(txttelefono.Text) Or
+            String.IsNullOrEmpty(txtIDCLIENTE.Text) Or
+            String.IsNullOrEmpty(rtbDireccion.Text) Then
 
             Return 1
 
@@ -44,15 +48,29 @@
             MessageBox.Show("Hay campos vacíos")
         Else
 
-            Me.ClienteTableAdapter.agregar(
-                                            txtNombre.Text,
-                                            txtApellido.Text,
-                                            txtCedula.Text,
-                                            txttelefono.Text,
-                                            rtbDireccion.Text,
-                                            txtEmail.Text,
-                                            Convert.ToInt32(cbxTipo.SelectedValue))
-            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+            Try
+
+                Me.ClienteTableAdapter.agregar(
+                                txtNombre.Text,
+                                txtApellido.Text,
+                                txtCedula.Text,
+                                txttelefono.Text,
+                                rtbDireccion.Text,
+                                txtEmail.Text,
+                                Convert.ToInt32(cbxTipo.SelectedValue))
+
+                Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+
+            Catch SQLex As SqlException
+
+                MsgBox("Hubo un error al registrar el cliente\n" + SQLex.ToString(), MsgBoxStyle.Critical, "Error SQL")
+
+            Catch ex As Exception
+
+                MsgBox("Hubo un error al registrar el cliente\n" + ex.ToString(), MsgBoxStyle.Critical, "Error")
+                MsgBox("Hubo un error al registrar el cliente\n" + ex.StackTrace(), MsgBoxStyle.Critical, "Error")
+
+            End Try
 
         End If
     End Sub
@@ -65,16 +83,29 @@
 
         Else
 
-            Me.ClienteTableAdapter.editarCliente(txtNombre.Text,
-                                            txtApellido.Text,
-                                            txtCedula.Text,
-                                            txttelefono.Text,
-                                            rtbDireccion.Text,
-                                            txtEmail.Text,
-                                            Convert.ToInt32(cbxTipo.SelectedValue),
-                                            Convert.ToInt32(txtIDCLIENTE.Text))
+            Try
 
-            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+                Me.ClienteTableAdapter.editarCliente(txtNombre.Text,
+                                txtApellido.Text,
+                                txtCedula.Text,
+                                txttelefono.Text,
+                                rtbDireccion.Text,
+                                txtEmail.Text,
+                                Convert.ToInt32(cbxTipo.SelectedValue),
+                                Convert.ToInt32(txtIDCLIENTE.Text))
+
+                Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+            Catch SQLex As SqlException
+
+                MsgBox("Hubo un error al editar el cliente" + vbCr + SQLex.ToString(), MsgBoxStyle.Critical, "Error SQL")
+
+
+            Catch ex As Exception
+
+                MsgBox("Hubo un error al editar el cliente" + vbCr + ex.ToString(), MsgBoxStyle.Critical, "Error")
+                MsgBox("Hubo un error al editar el cliente" + vbCr + ex.StackTrace(), MsgBoxStyle.Critical, "Error")
+
+            End Try
 
         End If
 
@@ -82,18 +113,29 @@
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
 
-        Dim idEliminar = Convert.ToInt32(txtIDCLIENTE.Text)
+        Try
 
-        If idEliminar.Equals("") Then
+            Dim idEliminar = txtIDCLIENTE.Text
 
-            MessageBox.Show("No seleccionaste un cliente")
+            If idEliminar.Equals("") Then
 
-        Else
+                MessageBox.Show("No seleccionaste un cliente")
 
-            Me.ClienteTableAdapter.eliminarCliente(idEliminar)
-            Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+            Else
 
-        End If
+                Convert.ToInt32(idEliminar)
+
+                Me.ClienteTableAdapter.eliminarCliente(idEliminar)
+                Me.VwClientesTableAdapter1.Fill(Me.KelaniDataSet.VwClientes)
+
+            End If
+
+        Catch ex As Exception
+
+            MsgBox("Hubo un error al borrar el cliente\n" + ex.ToString(), MsgBoxStyle.Critical, "Error")
+            MsgBox("Hubo un error al borrar el cliente\n" + ex.StackTrace(), MsgBoxStyle.Critical, "Error")
+
+        End Try
 
     End Sub
 
@@ -105,6 +147,6 @@
         txtEmail.Text = dgvClientes.CurrentRow.Cells.Item(4).Value.ToString
         txtCedula.Text = dgvClientes.CurrentRow.Cells.Item(5).Value.ToString
         rtbDireccion.Text = dgvClientes.CurrentRow.Cells.Item(6).Value.ToString
-        cbxTipo.SelectedItem = dgvClientes.CurrentRow.Cells.Item(7).Value.ToString
+        'cbxTipo.SelectedValue = dgvClientes.CurrentRow.Cells.Item(7).Value.ToString()
     End Sub
 End Class

@@ -23,6 +23,8 @@ Partial Class frmGestionClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.KelaniDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -52,7 +54,6 @@ Partial Class frmGestionClientes
         Me.ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.ClienteTableAdapter()
         Me.T_ClienteTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.T_ClienteTableAdapter()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
-        Me.VwClientesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +62,7 @@ Partial Class frmGestionClientes
         Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoClDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VwClientesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.VwClientesTableAdapter1 = New Sistema_Kelani.KelaniDataSetTableAdapters.VwClientesTableAdapter()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,7 +165,6 @@ Partial Class frmGestionClientes
         '
         Me.cbxTipo.DataSource = Me.TClienteBindingSource
         Me.cbxTipo.DisplayMember = "tipo_Cl"
-        Me.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxTipo.FormattingEnabled = True
         Me.cbxTipo.Location = New System.Drawing.Point(163, 219)
         Me.cbxTipo.Margin = New System.Windows.Forms.Padding(2)
@@ -332,20 +333,26 @@ Partial Class frmGestionClientes
         '
         Me.dgvClientes.AllowUserToAddRows = False
         Me.dgvClientes.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.PapayaWhip
+        Me.dgvClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvClientes.AutoGenerateColumns = False
+        Me.dgvClientes.BackgroundColor = System.Drawing.SystemColors.Info
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdClienteDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.TipoClDataGridViewTextBoxColumn})
         Me.dgvClientes.DataSource = Me.VwClientesBindingSource1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.BurlyWood
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvClientes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvClientes.Location = New System.Drawing.Point(9, 325)
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.ReadOnly = True
         Me.dgvClientes.Size = New System.Drawing.Size(823, 269)
         Me.dgvClientes.TabIndex = 2
-        '
-        'VwClientesBindingSource1
-        '
-        Me.VwClientesBindingSource1.DataMember = "VwClientes"
-        Me.VwClientesBindingSource1.DataSource = Me.KelaniDataSet
         '
         'IdClienteDataGridViewTextBoxColumn
         '
@@ -402,6 +409,11 @@ Partial Class frmGestionClientes
         Me.TipoClDataGridViewTextBoxColumn.HeaderText = "tipo_Cl"
         Me.TipoClDataGridViewTextBoxColumn.Name = "TipoClDataGridViewTextBoxColumn"
         Me.TipoClDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'VwClientesBindingSource1
+        '
+        Me.VwClientesBindingSource1.DataMember = "VwClientes"
+        Me.VwClientesBindingSource1.DataSource = Me.KelaniDataSet
         '
         'VwClientesTableAdapter1
         '

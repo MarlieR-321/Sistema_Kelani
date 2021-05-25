@@ -204,6 +204,12 @@
     <Compile Include="Ventanas de facturación\frmVerClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventanas de facturación\frmVerProductos.Designer.vb">
+      <DependentUpon>frmVerProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas de facturación\frmVerProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventanas de facturación\frmVistaDeEncabezados.Designer.vb">
       <DependentUpon>frmVistaDeEncabezados.vb</DependentUpon>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas de facturación\frmVerClientes.resx">
       <DependentUpon>frmVerClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas de facturación\frmVerProductos.resx">
+      <DependentUpon>frmVerProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas de facturación\frmVistaDeEncabezados.resx">
       <DependentUpon>frmVistaDeEncabezados.vb</DependentUpon>
