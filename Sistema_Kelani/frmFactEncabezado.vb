@@ -1,4 +1,6 @@
-﻿Public Class frmFactEncabezado
+﻿Imports System.Data.SqlClient
+
+Public Class frmFactEncabezado
     Private Sub bEditar_Click(sender As Object, e As EventArgs)
         frmFactDetalles.Show()
     End Sub
@@ -40,35 +42,40 @@
         Dim subTotalProducto = Convert.ToDouble(txtPrecioProducto.Text) * Convert.ToInt32(txtCantidadProducto.Text)
         Dim idFactura
         Dim total
+        Try
+            If (Me.txtIDFactura.Text.Equals("")) Then
 
-        If (Me.txtIDFactura.Text.Equals("")) Then
+                idFactura = FacturaEncTableAdapter1.GetIdFactura()
+                FacturaDetTableAdapter1.InsertQuery(
+               Convert.ToDouble(txtPrecioProducto.Text),
+               subTotalProducto,
+               Convert.ToInt32(txtCantidadProducto.Text),
+               idFactura,
+               Convert.ToInt32(txtIDProducto.Text))
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+                limpiarDet()
+            Else
 
-            idFactura = FacturaEncTableAdapter1.GetIdFactura()
-            FacturaDetTableAdapter1.InsertQuery(
-           Convert.ToDouble(txtPrecioProducto.Text),
-           subTotalProducto,
-           Convert.ToInt32(txtCantidadProducto.Text),
-           idFactura,
-           Convert.ToInt32(txtIDProducto.Text))
-            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
-            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
-            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
-            limpiarDet()
-        Else
-
-            idFactura = txtIDFactura.Text
-            FacturaDetTableAdapter1.InsertQuery(
-           Convert.ToDouble(txtPrecioProducto.Text),
-           subTotalProducto,
-           Convert.ToInt32(txtCantidadProducto.Text),
-           idFactura,
-           Convert.ToInt32(txtIDProducto.Text))
-            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
-            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
-            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
-            limpiarDet()
-        End If
-
+                idFactura = txtIDFactura.Text
+                FacturaDetTableAdapter1.InsertQuery(
+               Convert.ToDouble(txtPrecioProducto.Text),
+               subTotalProducto,
+               Convert.ToInt32(txtCantidadProducto.Text),
+               idFactura,
+               Convert.ToInt32(txtIDProducto.Text))
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+                limpiarDet()
+            End If
+        Catch sqlEx As SqlException
+            MsgBox("Error al ingresar las categorias", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al ingresar las categorias", Ex.Message())
+            MsgBox("Error al ingresar las categorias", Ex.StackTrace())
+        End Try
 
 
     End Sub
@@ -87,36 +94,42 @@
         Dim subTotalProducto = Convert.ToDouble(txtPrecioProducto.Text) * Convert.ToInt32(txtCantidadProducto.Text)
         Dim idFactura
         Dim total
+        Try
+            If (Me.txtIDFactura.Text.Equals("")) Then
 
-        If (Me.txtIDFactura.Text.Equals("")) Then
+                idFactura = FacturaEncTableAdapter1.GetIdFactura()
+                FacturaDetTableAdapter1.UpdateQuery(
+               Convert.ToDouble(txtPrecioProducto.Text),
+               subTotalProducto,
+               Convert.ToInt32(txtCantidadProducto.Text),
+               idFactura,
+               Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+                limpiarDet()
+            Else
 
-            idFactura = FacturaEncTableAdapter1.GetIdFactura()
-            FacturaDetTableAdapter1.UpdateQuery(
-           Convert.ToDouble(txtPrecioProducto.Text),
-           subTotalProducto,
-           Convert.ToInt32(txtCantidadProducto.Text),
-           idFactura,
-           Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
-            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
-            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
-            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
-            limpiarDet()
-        Else
-
-            idFactura = txtIDFactura.Text
-            FacturaDetTableAdapter1.UpdateQuery(
-           Convert.ToDouble(txtPrecioProducto.Text),
-           subTotalProducto,
-           Convert.ToInt32(txtCantidadProducto.Text),
-           idFactura,
-           Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
+                idFactura = txtIDFactura.Text
+                FacturaDetTableAdapter1.UpdateQuery(
+               Convert.ToDouble(txtPrecioProducto.Text),
+               subTotalProducto,
+               Convert.ToInt32(txtCantidadProducto.Text),
+               idFactura,
+               Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
 
 
-            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
-            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
-            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
-            limpiarDet()
-        End If
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+                limpiarDet()
+            End If
+        Catch sqlEx As SqlException
+            MsgBox("Error al ingresar las categorias", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al ingresar las categorias", Ex.Message())
+            MsgBox("Error al ingresar las categorias", Ex.StackTrace())
+        End Try
     End Sub
 
     Private Sub limpiarDet()
@@ -128,7 +141,33 @@
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Me.FacturaDetTableAdapter1.DeleteQuery(Convert.ToInt32(txtIDDetalle.Text))
+        Dim subTotalProducto = Convert.ToDouble(txtPrecioProducto.Text) * Convert.ToInt32(txtCantidadProducto.Text)
+        Dim idFactura
+        Dim total
+        Try
+            If (Me.txtIDFactura.Text.Equals("")) Then
 
+                idFactura = FacturaEncTableAdapter1.GetIdFactura()
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+
+            Else
+
+                idFactura = txtIDFactura.Text
+                total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+                FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+                Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+
+            End If
+        Catch sqlEx As SqlException
+            MsgBox("Error al ingresar las categorias", sqlEx.Message())
+        Catch Ex As Exception
+            MsgBox("Error al ingresar las categorias", Ex.Message())
+            MsgBox("Error al ingresar las categorias", Ex.StackTrace())
+        End Try
+        limpiarDet()
     End Sub
 
 End Class
