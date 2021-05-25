@@ -10839,10 +10839,12 @@ Namespace KelaniDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "UPDATE [dbo].[bodega] SET [bodega] = @bodega, [estado] = @estado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(2).CommandText = "UPDATE [dbo].[bodega] SET [bodega] = @bodega, [estado] = @estado WHERE (([idBodeg"& _ 
+                "a] = @Original_idBodega));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bodega", Global.System.Data.SqlDbType.NVarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "bodega", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estado", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "estado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idBodega", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idBodega", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11024,7 +11026,7 @@ Namespace KelaniDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function UpdateQuery(ByVal bodega As String, ByVal estado As Integer) As Integer
+        Public Overloads Overridable Function UpdateQuery(ByVal bodega As String, ByVal estado As Integer, ByVal Original_idBodega As Integer) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (bodega Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("bodega")
@@ -11032,6 +11034,7 @@ Namespace KelaniDataSetTableAdapters
                 command.Parameters(0).Value = CType(bodega,String)
             End If
             command.Parameters(1).Value = CType(estado,Integer)
+            command.Parameters(2).Value = CType(Original_idBodega,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -17807,11 +17810,17 @@ Namespace KelaniDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idBodega, bodega, estado FROM dbo.vw_Bodega"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT idbodega,bodega, estado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     vw_bodega"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bodega LIKE '%' + @ca"& _ 
+                "dena + '%') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (estado LIKE '%' + @cadena + '%')"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cadena", Global.System.Data.SqlDbType.NVarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "bodega", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17833,6 +17842,40 @@ Namespace KelaniDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As KelaniDataSet.vw_BodegaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As KelaniDataSet.vw_BodegaDataTable = New KelaniDataSet.vw_BodegaDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByText(ByVal dataTable As KelaniDataSet.vw_BodegaDataTable, ByVal cadena As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (cadena Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("cadena")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(cadena,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByText(ByVal cadena As String) As KelaniDataSet.vw_BodegaDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (cadena Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("cadena")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(cadena,String)
+            End If
             Dim dataTable As KelaniDataSet.vw_BodegaDataTable = New KelaniDataSet.vw_BodegaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

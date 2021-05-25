@@ -176,10 +176,10 @@
     <Compile Include="KelaniDataSet.vb">
       <DependentUpon>KelaniDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MovimientoInventario.designer.vb">
-      <DependentUpon>MovimientoInventario.vb</DependentUpon>
+    <Compile Include="frmMovimientoInventario.designer.vb">
+      <DependentUpon>frmMovimientoInventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="MovimientoInventario.vb">
+    <Compile Include="frmMovimientoInventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -257,8 +257,8 @@
     <EmbeddedResource Include="frmWelcome.resx">
       <DependentUpon>frmWelcome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovimientoInventario.resx">
-      <DependentUpon>MovimientoInventario.vb</DependentUpon>
+    <EmbeddedResource Include="frmMovimientoInventario.resx">
+      <DependentUpon>frmMovimientoInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

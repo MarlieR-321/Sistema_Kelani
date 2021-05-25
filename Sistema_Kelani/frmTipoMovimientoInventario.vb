@@ -102,4 +102,5 @@ Public Class frmTipoMovimientoInventario
         Me.txtIdTipoMov.Text = dgvTipoMovInv.CurrentRow.Cells.Item(0).Value.ToString()
         Me.txtNombTM.Text = dgvTipoMovInv.CurrentRow.Cells.Item(1).Value.ToString()
     End Sub
+
 End Class

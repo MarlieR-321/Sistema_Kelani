@@ -28,7 +28,6 @@ Partial Class frmBodega
         Me.VwBodegaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
         Me.txtBodega = New System.Windows.Forms.TextBox()
-        Me.btmDesactivar = New System.Windows.Forms.Button()
         Me.btmEditar = New System.Windows.Forms.Button()
         Me.btmIngresar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -57,7 +56,6 @@ Partial Class frmBodega
         '
         Me.GroupBox2.Controls.Add(Me.cbxEstado)
         Me.GroupBox2.Controls.Add(Me.txtBodega)
-        Me.GroupBox2.Controls.Add(Me.btmDesactivar)
         Me.GroupBox2.Controls.Add(Me.btmEditar)
         Me.GroupBox2.Controls.Add(Me.btmIngresar)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -102,29 +100,19 @@ Partial Class frmBodega
         Me.txtBodega.Size = New System.Drawing.Size(250, 30)
         Me.txtBodega.TabIndex = 6
         '
-        'btmDesactivar
-        '
-        Me.btmDesactivar.Location = New System.Drawing.Point(255, 186)
-        Me.btmDesactivar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btmDesactivar.Name = "btmDesactivar"
-        Me.btmDesactivar.Size = New System.Drawing.Size(135, 32)
-        Me.btmDesactivar.TabIndex = 4
-        Me.btmDesactivar.Text = "Desactivar"
-        Me.btmDesactivar.UseVisualStyleBackColor = True
-        '
         'btmEditar
         '
-        Me.btmEditar.Location = New System.Drawing.Point(141, 186)
+        Me.btmEditar.Location = New System.Drawing.Point(226, 186)
         Me.btmEditar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btmEditar.Name = "btmEditar"
-        Me.btmEditar.Size = New System.Drawing.Size(89, 32)
+        Me.btmEditar.Size = New System.Drawing.Size(126, 32)
         Me.btmEditar.TabIndex = 4
         Me.btmEditar.Text = "Editar"
         Me.btmEditar.UseVisualStyleBackColor = True
         '
         'btmIngresar
         '
-        Me.btmIngresar.Location = New System.Drawing.Point(10, 186)
+        Me.btmIngresar.Location = New System.Drawing.Point(34, 186)
         Me.btmIngresar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btmIngresar.Name = "btmIngresar"
         Me.btmIngresar.Size = New System.Drawing.Size(116, 32)
@@ -275,7 +263,6 @@ Partial Class frmBodega
 
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtBodega As TextBox
-    Friend WithEvents btmDesactivar As Button
     Friend WithEvents btmEditar As Button
     Friend WithEvents btmIngresar As Button
     Friend WithEvents Label2 As Label
