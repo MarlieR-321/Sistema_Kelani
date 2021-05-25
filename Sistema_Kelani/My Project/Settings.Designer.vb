@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=MARLIE;Initial Catalog=Kelani;Persist Security Info=True;User ID=sa;P"& _ 
-            "assword=BDsqlServer2016")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-RLRNJIT;Initial Catalog=Kelani;Persist Security Info=True;Use"& _ 
+            "r ID=sa;Password=123")>  _
         Public ReadOnly Property KelaniConnectionString() As String
             Get
                 Return CType(Me("KelaniConnectionString"),String)
