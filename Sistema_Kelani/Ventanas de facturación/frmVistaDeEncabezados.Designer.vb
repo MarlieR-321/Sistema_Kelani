@@ -53,6 +53,13 @@ Partial Class frmVistaDeEncabezados
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.FacturaEncBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.FacturaEncTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.FacturaEncTableAdapter()
+        Me.VwFacturaDetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Vw_FacturaDetTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.vw_FacturaDetTableAdapter()
         Me.IdFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -63,17 +70,13 @@ Partial Class frmVistaDeEncabezados
         Me.IVADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FacturaEncBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KelaniDataSet = New Sistema_Kelani.KelaniDataSet()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.FacturaEncTableAdapter = New Sistema_Kelani.KelaniDataSetTableAdapters.FacturaEncTableAdapter()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FacturaEncBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VwFacturaDetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -366,6 +369,45 @@ Partial Class frmVistaDeEncabezados
         Me.DataGridView1.Size = New System.Drawing.Size(1135, 223)
         Me.DataGridView1.TabIndex = 2
         '
+        'FacturaEncBindingSource
+        '
+        Me.FacturaEncBindingSource.DataMember = "FacturaEnc"
+        Me.FacturaEncBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'KelaniDataSet
+        '
+        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
+        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(159, 35)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(317, 26)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(24, 38)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(129, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Buscar por RUC:"
+        '
+        'FacturaEncTableAdapter
+        '
+        Me.FacturaEncTableAdapter.ClearBeforeFill = True
+        '
+        'VwFacturaDetBindingSource
+        '
+        Me.VwFacturaDetBindingSource.DataMember = "vw_FacturaDet"
+        Me.VwFacturaDetBindingSource.DataSource = Me.KelaniDataSet
+        '
+        'Vw_FacturaDetTableAdapter
+        '
+        Me.Vw_FacturaDetTableAdapter.ClearBeforeFill = True
+        '
         'IdFacturaDataGridViewTextBoxColumn
         '
         Me.IdFacturaDataGridViewTextBoxColumn.DataPropertyName = "idFactura"
@@ -436,36 +478,6 @@ Partial Class frmVistaDeEncabezados
         Me.IdClienteDataGridViewTextBoxColumn.Name = "IdClienteDataGridViewTextBoxColumn"
         Me.IdClienteDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'FacturaEncBindingSource
-        '
-        Me.FacturaEncBindingSource.DataMember = "FacturaEnc"
-        Me.FacturaEncBindingSource.DataSource = Me.KelaniDataSet
-        '
-        'KelaniDataSet
-        '
-        Me.KelaniDataSet.DataSetName = "KelaniDataSet"
-        Me.KelaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(159, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(317, 26)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 38)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(129, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Buscar por RUC:"
-        '
-        'FacturaEncTableAdapter
-        '
-        Me.FacturaEncTableAdapter.ClearBeforeFill = True
-        '
         'frmVistaDeEncabezados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -486,6 +498,7 @@ Partial Class frmVistaDeEncabezados
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FacturaEncBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KelaniDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VwFacturaDetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -497,16 +510,6 @@ Partial Class frmVistaDeEncabezados
     Friend WithEvents KelaniDataSet As KelaniDataSet
     Friend WithEvents FacturaEncBindingSource As BindingSource
     Friend WithEvents FacturaEncTableAdapter As KelaniDataSetTableAdapters.FacturaEncTableAdapter
-    Friend WithEvents IdFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NumFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdentificacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DireccionClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NumRUCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IVADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnUsar As Button
     Friend WithEvents btnNuevo As Button
@@ -535,4 +538,16 @@ Partial Class frmVistaDeEncabezados
     Friend WithEvents Label6 As Label
     Friend WithEvents txtNombreCliente As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents VwFacturaDetBindingSource As BindingSource
+    Friend WithEvents Vw_FacturaDetTableAdapter As KelaniDataSetTableAdapters.vw_FacturaDetTableAdapter
+    Friend WithEvents IdFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NumFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdentificacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DireccionClDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NumRUCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IVADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

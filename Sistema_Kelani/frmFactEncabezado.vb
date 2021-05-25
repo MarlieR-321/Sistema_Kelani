@@ -4,13 +4,9 @@
     End Sub
 
     Private Sub frmFactEncabezado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.vw_Detalles' Puede moverla o quitarla según sea necesario.
-        Me.Vw_DetallesTableAdapter.Fill(Me.KelaniDataSet.vw_Detalles)
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet1.vw_FacturaDet' Puede moverla o quitarla según sea necesario.
-        Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet1.vw_FacturaDet)
+        ' Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet1.vw_FacturaDet, 0)
         'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.vw_FacturaDet' Puede moverla o quitarla según sea necesario.
-        Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet.vw_FacturaDet)
-        'TODO: esta línea de código carga datos en la tabla 'KelaniDataSet.VwClientes' Puede moverla o quitarla según sea necesario.
         Me.VwClientesTableAdapter.Fill(Me.KelaniDataSet.VwClientes)
 
     End Sub
@@ -34,31 +30,105 @@
                                          txtIdentificacion.Text,
                                          rtbDirCliente.Text,
                                          txtRUC.Text,
-                                         Convert.ToDouble(txtIVA.Text),
-                                         Convert.ToDouble(txtTotal.Text),
-                                         Convert.ToInt32(txtIDCliente.Text))
+                                         0, 0, Convert.ToInt32(txtIDCliente.Text))
         MessageBox.Show("Se agregó el encabezado con este RUC: " + txtRUC.Text + " a nombre de: " + txtNombreCliente.Text)
+
     End Sub
 
     Private Sub btnAgregarALaFactura_Click(sender As Object, e As EventArgs) Handles btnAgregarALaFactura.Click
 
         Dim subTotalProducto = Convert.ToDouble(txtPrecioProducto.Text) * Convert.ToInt32(txtCantidadProducto.Text)
+        Dim idFactura
+        Dim total
 
-        FacturaDetTableAdapter1.InsertQuery(
-            Convert.ToDouble(txtPrecioProducto.Text),
-            subTotalProducto,
-            Convert.ToInt32(txtCantidadProducto.Text),
-            Convert.ToInt32(txtIDFactura.Text),
-            Convert.ToInt32(txtIDProducto.Text))
+        If (Me.txtIDFactura.Text.Equals("")) Then
 
-        Me.Vw_FacturaDetTableAdapter.Fill(Me.KelaniDataSet.vw_FacturaDet)
+            idFactura = FacturaEncTableAdapter1.GetIdFactura()
+            FacturaDetTableAdapter1.InsertQuery(
+           Convert.ToDouble(txtPrecioProducto.Text),
+           subTotalProducto,
+           Convert.ToInt32(txtCantidadProducto.Text),
+           idFactura,
+           Convert.ToInt32(txtIDProducto.Text))
+            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+            limpiarDet()
+        Else
+
+            idFactura = txtIDFactura.Text
+            FacturaDetTableAdapter1.InsertQuery(
+           Convert.ToDouble(txtPrecioProducto.Text),
+           subTotalProducto,
+           Convert.ToInt32(txtCantidadProducto.Text),
+           idFactura,
+           Convert.ToInt32(txtIDProducto.Text))
+            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+            limpiarDet()
+        End If
+
+
+
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDetalles.CellClick
-        txtIDDetalle.Text = dgvDetalles.CurrentRow.Cells.Item(0).Value.ToString()
-        txtNombreProducto.Text = dgvDetalles.CurrentRow.Cells.Item(1).Value.ToString()
-        txtPresentacionProducto.Text = dgvDetalles.CurrentRow.Cells.Item(2).Value.ToString()
-        txtCantidadProducto.Text = dgvDetalles.CurrentRow.Cells.Item(3).Value.ToString()
-        txtPrecioProducto.Text = dgvDetalles.CurrentRow.Cells.Item(4).Value.ToString()
+        'Aviso mi view usa varios datos pero deja visibles solo algunos so  estan buenos los numero
+        txtIDDetalle.Text = dgvDetalles.CurrentRow.Cells.Item(1).Value.ToString()
+        txtIDProducto.Text = dgvDetalles.CurrentRow.Cells.Item(2).Value.ToString()
+        txtNombreProducto.Text = dgvDetalles.CurrentRow.Cells.Item(3).Value.ToString()
+        'txtPresentacionProducto.Text = dgvDetalles.CurrentRow.Cells.Item(5).Value.ToString()
+        txtCantidadProducto.Text = dgvDetalles.CurrentRow.Cells.Item(7).Value.ToString()
+        txtPrecioProducto.Text = dgvDetalles.CurrentRow.Cells.Item(6).Value.ToString()
     End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim subTotalProducto = Convert.ToDouble(txtPrecioProducto.Text) * Convert.ToInt32(txtCantidadProducto.Text)
+        Dim idFactura
+        Dim total
+
+        If (Me.txtIDFactura.Text.Equals("")) Then
+
+            idFactura = FacturaEncTableAdapter1.GetIdFactura()
+            FacturaDetTableAdapter1.UpdateQuery(
+           Convert.ToDouble(txtPrecioProducto.Text),
+           subTotalProducto,
+           Convert.ToInt32(txtCantidadProducto.Text),
+           idFactura,
+           Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
+            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+            limpiarDet()
+        Else
+
+            idFactura = txtIDFactura.Text
+            FacturaDetTableAdapter1.UpdateQuery(
+           Convert.ToDouble(txtPrecioProducto.Text),
+           subTotalProducto,
+           Convert.ToInt32(txtCantidadProducto.Text),
+           idFactura,
+           Convert.ToInt32(txtIDProducto.Text), Convert.ToInt32(txtIDDetalle.Text))
+
+
+            total = FacturaDetTableAdapter1.SumaSubtotal(idFactura)
+            FacturaEncTableAdapter1.ActualizarTotal(total, idFactura)
+            Me.dgvDetalles.DataSource = Me.Vw_FacturaDetTableAdapter.GetData(idFactura)
+            limpiarDet()
+        End If
+    End Sub
+
+    Private Sub limpiarDet()
+        txtIDDetalle.Text = ""
+        txtIDProducto.Text = ""
+        txtPrecioProducto.Text = ""
+        txtCantidadProducto.Text = ""
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+    End Sub
+
 End Class

@@ -27,7 +27,6 @@ C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmInventario.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmProductos.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmUMedida.resources
-C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.MovimientoInventario.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.Resources.resources
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.vbproj.GenerateResource.Cache
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.exe
@@ -93,3 +92,5 @@ C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug
 C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTipoMovimientoInventario.resources
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmTipoMovimientoInventario.resources
 C:\Users\marco\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerProductos.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmMovimientoInventario.resources
+C:\Users\Marlon Ramirez\Documents\GitHub\Sistema_Kelani\Sistema_Kelani\obj\Debug\Sistema_Kelani.frmVerProductos.resources

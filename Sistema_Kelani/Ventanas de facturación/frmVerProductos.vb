@@ -15,7 +15,7 @@
 
         frmFactEncabezado.txtIDProducto.Text = dgvProductos.CurrentRow.Cells.Item(0).Value.ToString()
         frmFactEncabezado.txtNombreProducto.Text = dgvProductos.CurrentRow.Cells.Item(1).Value.ToString()
-        frmFactEncabezado.txtPresentacionProducto.Text = dgvProductos.CurrentRow.Cells.Item(2).Value.ToString()
+        'frmFactEncabezado.txtPresentacionProducto.Text = dgvProductos.CurrentRow.Cells.Item(2).Value.ToString()
         frmFactEncabezado.txtPrecioProducto.Text = dgvProductos.CurrentRow.Cells.Item(3).Value.ToString()
 
         Close()

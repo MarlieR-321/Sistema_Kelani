@@ -17,6 +17,7 @@
         frmFactEncabezado.txtTotal.Text = DataGridView1.CurrentRow.Cells.Item(8).Value.ToString()
         frmFactEncabezado.txtIDCliente.Text = DataGridView1.CurrentRow.Cells.Item(9).Value.ToString()
 
+        frmFactEncabezado.dgvDetalles.DataSource = Vw_FacturaDetTableAdapter.GetData(txtIDFactura.Text)
         Close()
 
     End Sub
@@ -32,8 +33,7 @@
                                                  txtIdentificacion.Text,
                                                  rtbDirCliente.Text,
                                                  txtRUC.Text,
-                                                 Convert.ToDouble(txtIVA.Text),
-                                                 Convert.ToDouble(txtTotal.Text),
+                                                 0, 0,
                                                  Convert.ToInt32(txtIDCliente.Text))
         Me.FacturaEncTableAdapter.Fill(Me.KelaniDataSet.FacturaEnc)
     End Sub
@@ -72,7 +72,7 @@
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         txtIDFactura.Text = DataGridView1.CurrentRow.Cells.Item(0).Value.ToString()
         txtNumeroFactura.Text = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString()
-        dtpFecha.Text = DataGridView1.CurrentRow.Cells.Item(2).Value.ToString()
+        dtpFecha.Value = DataGridView1.CurrentRow.Cells.Item(2).Value.ToString()
         txtNombreCliente.Text = DataGridView1.CurrentRow.Cells.Item(3).Value.ToString()
         txtIdentificacion.Text = DataGridView1.CurrentRow.Cells.Item(4).Value.ToString()
         rtbDirCliente.Text = DataGridView1.CurrentRow.Cells.Item(5).Value.ToString()
