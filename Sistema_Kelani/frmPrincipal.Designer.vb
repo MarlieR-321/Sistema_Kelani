@@ -27,6 +27,7 @@ Partial Class frmPrincipal
         Me.FacturacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BodegaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeMovimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatalogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +45,7 @@ Partial Class frmPrincipal
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeMovimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +60,7 @@ Partial Class frmPrincipal
         '
         'InventarioToolStripMenuItem
         '
-        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.BodegaToolStripMenuItem, Me.TipoDeMovimientoToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem, Me.IngresosToolStripMenuItem, Me.BodegaToolStripMenuItem, Me.TipoDeMovimientoToolStripMenuItem, Me.MovimientoToolStripMenuItem})
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
         Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.InventarioToolStripMenuItem.Text = "Inventario"
@@ -81,6 +82,12 @@ Partial Class frmPrincipal
         Me.BodegaToolStripMenuItem.Name = "BodegaToolStripMenuItem"
         Me.BodegaToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.BodegaToolStripMenuItem.Text = "Bodega"
+        '
+        'TipoDeMovimientoToolStripMenuItem
+        '
+        Me.TipoDeMovimientoToolStripMenuItem.Name = "TipoDeMovimientoToolStripMenuItem"
+        Me.TipoDeMovimientoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.TipoDeMovimientoToolStripMenuItem.Text = "Tipo de Movimiento"
         '
         'CatalogosToolStripMenuItem
         '
@@ -190,11 +197,11 @@ Partial Class frmPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'TipoDeMovimientoToolStripMenuItem
+        'MovimientoToolStripMenuItem
         '
-        Me.TipoDeMovimientoToolStripMenuItem.Name = "TipoDeMovimientoToolStripMenuItem"
-        Me.TipoDeMovimientoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.TipoDeMovimientoToolStripMenuItem.Text = "Tipo de Movimiento"
+        Me.MovimientoToolStripMenuItem.Name = "MovimientoToolStripMenuItem"
+        Me.MovimientoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.MovimientoToolStripMenuItem.Text = "Movimiento"
         '
         'frmPrincipal
         '
@@ -235,4 +242,5 @@ Partial Class frmPrincipal
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BodegaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TipoDeMovimientoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MovimientoToolStripMenuItem As ToolStripMenuItem
 End Class

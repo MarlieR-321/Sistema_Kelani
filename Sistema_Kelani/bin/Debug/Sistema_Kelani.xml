@@ -142,6 +142,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Sistema_Kelani.KelaniDataSet.vwMov_InvDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Sistema_Kelani.KelaniDataSet.bodegaRow">
 <summary>
 Represents strongly named DataRow class.
@@ -243,6 +248,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:Sistema_Kelani.KelaniDataSet.vw_FacturaDetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Sistema_Kelani.KelaniDataSet.vwMov_InvRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -352,6 +362,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:Sistema_Kelani.KelaniDataSet.vwMov_InvRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:Sistema_Kelani.KelaniDataSetTableAdapters.bodegaTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -453,6 +468,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Sistema_Kelani.KelaniDataSetTableAdapters.vw_FacturaDetTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Sistema_Kelani.KelaniDataSetTableAdapters.vwMov_InvTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

@@ -41,4 +41,8 @@
     Private Sub TipoDeMovimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeMovimientoToolStripMenuItem.Click
         frmTipoMovimientoInventario.Show()
     End Sub
+
+    Private Sub MovimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimientoToolStripMenuItem.Click
+        frmMovimientoInventario.Show()
+    End Sub
 End Class
